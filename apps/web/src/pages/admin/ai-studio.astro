@@ -1,0 +1,30 @@
+---
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import PromptStudio from "../../components/admin/PromptStudio.tsx";
+---
+<DashboardLayout title="AI Studio — 999x" role="OPS_MEMBER">
+  <h1 class="font-display font-bold text-[22px] text-pistachio">استوديو نماذج الذكاء الاصطناعي</h1>
+  <p class="text-[13px] text-white/50">Minimax M3 Prompt Studio — Hot-Reload بدون إعادة نشر</p>
+
+  <div class="mt-6">
+    <PromptStudio client:load />
+  </div>
+
+  <div class="mt-6 grid lg:grid-cols-3 gap-4">
+    <div class="rounded-2xl p-4 bg-canvas border border-lime/30">
+      <div class="font-mono font-bold text-pistachio text-[13px]">Minimax M3</div>
+      <div class="text-[11px] text-white/50">كتابة خطط HR</div>
+      <div class="flex justify-between mt-2 text-[11px] font-mono"><span class="text-white/40">$0 (FREE)</span><span class="text-lime">1.8s</span></div>
+    </div>
+    <div class="rounded-2xl p-4 bg-canvas border border-white/10">
+      <div class="font-mono font-bold text-pistachio text-[13px]">Minimax M3 — Fast</div>
+      <div class="text-[11px] text-white/50">تلخيص سريع</div>
+      <div class="flex justify-between mt-2 text-[11px] font-mono"><span class="text-white/40">$0 (FREE)</span><span class="text-lime">1.2s</span></div>
+    </div>
+    <div class="rounded-2xl p-4 bg-canvas border border-white/10">
+      <div class="font-mono font-bold text-pistachio text-[13px]">Minimax M3 — Reasoning</div>
+      <div class="text-[11px] text-white/50">تفكير معقد</div>
+      <div class="flex justify-between mt-2 text-[11px] font-mono"><span class="text-white/40">$0 (FREE)</span><span class="text-lime">1.8s</span></div>
+    </div>
+  </div>
+</DashboardLayout>

@@ -1,0 +1,19 @@
+{
+  "name": "999x-enterprise-platform",
+  "private": true,
+  "version": "1.0.0",
+  "description": "999x Operations & Client Hub — Neo-Cyber Executive Platform",
+  "workspaces": ["apps/*", "packages/*"],
+  "packageManager": "bun@1.4.0",
+  "scripts": {
+    "dev": "bun --filter web dev & bun --filter api dev",
+    "dev:web": "bun --filter web dev",
+    "dev:api": "bun --filter api dev",
+    "build": "bun --filter web build && bun --filter api build",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

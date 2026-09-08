@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="pageTitle" data-i18n="title">999x Operations & Client Hub — منظومة التشغيل والذكاء المؤسسي | HR • PR • Sponsors</title>
+<meta name="description" content="منصة 999x: تشغيل فائق الذكاء، موارد بشرية منضبطة، ووصول لا نهائي للرعاة. إعادة هندسة الموارد البشرية والعمليات في 48 ساعة للشركات الناشئة والتيمات التطوعية والفعاليات الكبرى." />
+
+<!-- Bilingual Typography: Unbounded (English display) + Cairo (Arabic display) + Alexandria (Arabic body) + Plus Jakarta Sans (English body) + JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&family=Alexandria:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Readex+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        canvas: '#150320',
+        surface: '#220633',
+        elevated: '#300a48',
+        'elevated-soft': '#3b0d59',
+        lime: '#A3E635',
+        'lime-glow': 'rgba(163,230,53,0.3)',
+        pistachio: '#F3F8CC',
+        'pistachio-muted': 'rgba(243,248,204,0.7)',
+        violet: '#8B5CF6',
+        'violet-deep': '#581C87',
+      },
+      fontFamily: {
+        unbounded: ['Unbounded', 'sans-serif'],
+        cairo: ['Cairo', 'sans-serif'],
+        alexandria: ['Alexandria', 'sans-serif'],
+        readex: ['Readex Pro', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+:root {
+  --canvas-dark: #150320;
+  --surface-dark: #220633;
+  --surface-elevated: #300a48;
+  --primary: #A3E635;
+  --primary-bright: #b8f54c;
+  --secondary: #F3F8CC;
+  --violet-glow: #8B5CF6;
+  --border-subtle: rgba(163, 230, 53, 0.16);
+  --border-card: rgba(243, 248, 204, 0.1);
+  --border-hover: rgba(163, 230, 53, 0.65);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--canvas-dark);
+  color: var(--secondary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Default fonts by language/direction */
+html[lang="ar"], [dir="rtl"] {
+  font-family: 'Alexandria', 'Readex Pro', system-ui, sans-serif;
+}
+html[lang="en"], [dir="ltr"] {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Display font: Unbounded for English, Cairo for Arabic */
+.font-display {
+  font-family: 'Cairo', 'Alexandria', sans-serif;
+  line-height: 1.35;
+}
+html[lang="en"] .font-display,
+[dir="ltr"] .font-display {
+  font-family: 'Unbounded', sans-serif !important;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+html[lang="ar"] .font-display,
+[dir="rtl"] .font-display {
+  font-family: 'Cairo', sans-serif !important;
+  letter-spacing: 0;
+  line-height: 1.38;
+}
+
+/* font-unbounded class: Unbounded in English, Cairo in Arabic */
+.font-unbounded {
+  font-family: 'Unbounded', sans-serif;
+}
+html[lang="en"] .font-unbounded,
+[dir="ltr"] .font-unbounded {
+  font-family: 'Unbounded', sans-serif !important;
+}
+html[lang="ar"] .font-unbounded,
+[dir="rtl"] .font-unbounded {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* Subtitles and descriptive text */
+.font-sub {
+  line-height: 1.75;
+}
+html[lang="ar"] .font-sub,
+[dir="rtl"] .font-sub {
+  font-family: 'Alexandria', 'Readex Pro', sans-serif;
+}
+html[lang="en"] .font-sub,
+[dir="ltr"] .font-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Eye-Soothing Glassmorphism with Generous Padding */
+.glass-panel {
+  background: linear-gradient(145deg, rgba(48, 10, 72, 0.65) 0%, rgba(34, 6, 51, 0.85) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -8px rgba(163, 230, 53, 0.2);
+}
+
+.glass-card-elevated {
+  background: linear-gradient(155deg, rgba(58, 13, 89, 0.8) 0%, rgba(38, 7, 58, 0.92) 100%);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(163, 230, 53, 0.22);
+}
+
+/* Luxury Interactive Buttons with Language Awareness */
+.btn-lime {
+  background: linear-gradient(135deg, #BAF74E 0%, #A3E635 100%);
+  color: #150320;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px -6px rgba(163, 230, 53, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-lime:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px -4px rgba(163, 230, 53, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, #C7FA66 0%, #A9EB38 100%);
+}
+.btn-lime:active {
+  transform: translateY(0);
+}
+
+.btn-glass {
+  background: rgba(48, 10, 72, 0.6);
+  border: 1px solid rgba(243, 248, 204, 0.18);
+  color: var(--secondary);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  transition: all 0.25s ease;
+}
+.btn-glass:hover {
+  background: rgba(62, 14, 94, 0.85);
+  border-color: rgba(163, 230, 53, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -6px rgba(139, 92, 246, 0.35);
+}
+
+/* Button typography per language */
+html[lang="en"] .btn-lime, html[lang="en"] .btn-glass,
+[dir="ltr"] .btn-lime, [dir="ltr"] .btn-glass {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+html[lang="ar"] .btn-lime, html[lang="ar"] .btn-glass,
+[dir="rtl"] .btn-lime, [dir="rtl"] .btn-glass {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Cyber Backdrop Pattern (Breathable & Subtle) */
+.cyber-grid-ambient {
+  background-image: 
+    linear-gradient(to right, rgba(243, 248, 204, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 248, 204, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 75%, transparent 100%);
+}
+
+/* Modals */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Legendary Grain + Vignette */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:0.028; z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+body::after{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
+  background: radial-gradient(ellipse 90% 70% at 50% -10%, transparent 60%, rgba(10,2,16,0.55) 100%);
+}
+
+/* Scroll Progress */
+#scrollProgress{
+  position:fixed; top:0; left:0; height:2px; width:0%; z-index:9999;
+  background: linear-gradient(90deg, #A3E635 0%, #8B5CF6 100%);
+  box-shadow: 0 0 10px rgba(163,230,53,0.6);
+  transition: width 0.08s linear;
+}
+
+/* Cursor Spotlight - follows mouse across bento + hero */
+.cursor-spotlight{
+  position: fixed; width: 640px; height: 640px; border-radius: 50%;
+  pointer-events: none; opacity:0; transition: opacity 0.3s ease;
+  background: radial-gradient(circle, rgba(163,230,53,0.08) 0%, rgba(139,92,246,0.05) 28%, transparent 68%);
+  transform: translate(-50%, -50%); z-index: 2; mix-blend-mode: screen;
+}
+
+/* Reveal on scroll */
+.reveal{ opacity:0; transform: translateY(14px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.in{ opacity:1; transform: translateY(0); }
+
+/* Float + shimmer legend */
+@keyframes floatLegend { 0%,100%{ transform: translateY(0) rotate(-0.6deg)} 50%{ transform: translateY(-9px) rotate(0.6deg)} }
+.float-legend{ animation: floatLegend 5.5s ease-in-out infinite; }
+.shimmer-legend{ position:relative; overflow:hidden; }
+.shimmer-legend::after{
+  content:""; position:absolute; inset:0; transform: translateX(-100%);
+  background: linear-gradient(106deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%);
+  animation: shimmerMove 2.8s ease-in-out infinite;
+}
+@keyframes shimmerMove{ 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(100%)} }
+
+.beveled-legend{ clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+
+/* Tiny marquee */
+.marquee{ overflow:hidden; white-space:nowrap; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-inner{ display:inline-flex; animation: marquee 28s linear infinite; }
+@keyframes marquee{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* Focus luxe */
+*:focus-visible{ outline: 2px solid #A3E635; outline-offset: 2px; border-radius: 4px; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .float-legend, .marquee-inner, .shimmer-legend::after{ animation: none !important; }
+  .reveal{ transition: none; opacity:1; transform:none; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #150320; }
+::-webkit-scrollbar-thumb { background: #300a48; border-radius: 999px; border: 2px solid #150320; }
+::-webkit-scrollbar-thumb:hover { background: #A3E635; }
+</style>
+</head>
+<body class="relative selection:bg-lime selection:text-canvas">
+<div id="scrollProgress"></div>
+<div id="cursorSpotlight" class="cursor-spotlight"></div>
+
+<!-- Ambient Background Lighting (Spacious & Soft) -->
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden z-0">
+  <div class="absolute -top-[250px] -right-[150px] w-[800px] h-[800px] rounded-full opacity-[0.22] blur-[140px]" style="background: radial-gradient(circle, #8B5CF6 0%, transparent 70%)"></div>
+  <div class="absolute top-[35%] -left-[220px] w-[750px] h-[750px] rounded-full opacity-[0.16] blur-[130px]" style="background: radial-gradient(circle, #A3E635 0%, transparent 70%)"></div>
+  <div class="absolute -bottom-[200px] right-[20%] w-[900px] h-[600px] rounded-full opacity-[0.12] blur-[150px]" style="background: radial-gradient(circle, #7C3AED 0%, transparent 70%)"></div>
+  <div class="absolute inset-0 cyber-grid-ambient opacity-50"></div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- HEADER / NAVBAR (With Responsive Bilingual Switcher)                      -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-40 backdrop-blur-xl border-b border-lime/10" style="background: rgba(21, 3, 32, 0.85);">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 h-[76px] flex items-center justify-between gap-6">
+    
+    <!-- Authentic 999x Brand Mark -->
+    <a href="#" class="flex items-center gap-3.5 group shrink-0">
+      <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(163,230,53,0.3)] group-hover:shadow-[0_0_30px_rgba(163,230,53,0.55)] transition-all duration-300">
+        <img src="logo_999x.jpg" alt="999x Logo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="leading-none">
+        <div class="flex items-center gap-1.5">
+          <span class="font-unbounded font-black tracking-tight text-[20px] text-pistachio">999x</span>
+          <span class="px-1.5 py-0.5 rounded text-[9.5px] font-mono font-bold bg-lime/15 text-lime border border-lime/30">OPS</span>
+        </div>
+        <span class="font-mono text-[10px] tracking-[0.18em] text-pistachio/50 uppercase mt-0.5 block">OPERATIONS HUB</span>
+      </div>
+    </a>
+
+    <!-- Clean Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-2 text-[14px] font-sub font-medium">
+      <a href="#pulse" class="px-4 py-2 rounded-xl hover:bg-white/[0.06] transition text-pistachio/80 hover:text-pistachio" data-i18n="nav_diagnostic">التشخيص اللحظي</a>
+      <a href="#modules" class="px-4 py-2 rounded-xl hover:bg-white/[0.06] transition text-pistachio/80 hover:text-pistachio" data-i18n="nav_modules">المحركات الأربعة</a>
+      <a href="#roadmap" class="px-4 py-2 rounded-xl hover:bg-white/[0.06] transition text-pistachio/80 hover:text-pistachio" data-i18n="nav_roadmap">خارطة الطريق</a>
+      <a href="#warroom" class="px-4 py-2 rounded-xl hover:bg-white/[0.06] transition text-pistachio/80 hover:text-pistachio" data-i18n="nav_warroom">غرفة العمليات</a>
+    </nav>
+
+    <!-- Actions & Language Switcher -->
+    <div class="flex items-center gap-3">
+      
+      <!-- Bilingual Switcher Pill -->
+      <div class="flex items-center bg-surface border border-white/12 rounded-xl p-1 text-[12px] font-unbounded">
+        <button id="langArBtn" class="px-3 py-1 rounded-lg font-bold transition bg-lime text-canvas" onclick="setLanguage('ar')">عربي</button>
+        <button id="langEnBtn" class="px-3 py-1 rounded-lg font-bold transition text-pistachio/60 hover:text-pistachio" onclick="setLanguage('en')">EN</button>
+      </div>
+
+      <!-- Live Client Hub Modal Trigger -->
+      <button id="openClientModalBtn" class="hidden sm:inline-flex items-center gap-2 text-[13px] px-4 h-11 rounded-xl btn-glass">
+        <span data-i18n="btn_client_hub">لوحة العميل</span>
+        <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+      </button>
+
+      <!-- Instant Wizard Trigger -->
+      <button id="openWizardBtn" class="inline-flex items-center justify-center px-5 h-11 btn-lime text-[13.5px]">
+        <span data-i18n="btn_start_free">ابدأ الفحص</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ========================================================================= -->
+<!-- HERO SECTION (Spacious, Punchy & Comfortable)                             -->
+<!-- ========================================================================= -->
+<section class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 pt-12 lg:pt-16 pb-16 lg:pb-24">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+    
+     <!-- Hero Text Column -->
+    <div class="lg:col-span-7 space-y-6 reveal">
+      
+      <!-- Social proof pill -->
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full text-[13px] font-mono border border-lime/30 bg-surface/80 backdrop-blur-md text-pistachio shadow-[0_0_20px_rgba(163,230,53,0.12)]">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-lime"></span>
+        </span>
+        <span data-i18n="hero_badge">منظومة معتمدة لـ 340+ فريق وشركة ناشئة</span>
+        <span class="hidden sm:inline-block w-px h-3.5 bg-white/20"></span>
+        <span class="hidden sm:inline text-lime font-bold">Live Ops 2026</span>
+      </div>
+
+      <!-- Main Headline (Cairo for Arabic / Unbounded for English) -->
+      <h1 class="font-display font-bold text-[28px] sm:text-[36px] lg:text-[42px] text-pistachio space-y-2">
+        <span class="block" data-i18n="hero_title_1">تشغيل فائق الذكاء.</span>
+        <span class="block" data-i18n="hero_title_2">موارد بشرية منضبطة.</span>
+        <span class="block text-lime" data-i18n="hero_title_3">ووصول لا نهائي للرعاة.</span>
+      </h1>
+
+      <!-- Description (Relaxed Leading & High Readability) -->
+      <p class="text-[15.5px] sm:text-[16.5px] leading-8 text-pistachio/80 max-w-[620px] font-sub" data-i18n="hero_desc_full">
+        نعيد هندسة الـ HR واستراتيجيات الرعاة في <span class="text-pistachio font-bold">48 ساعة</span> — تشخيص دقيق بالذكاء الاصطناعي، هيكل RACI معتمد، وحزم رعاة جاهزة للإرسال مع مسودات بريد شخصية. بدون اجتماعات عبثية. بدون شيتات ضائعة.
+      </p>
+
+      <!-- KPI micro-strip -->
+      <div class="grid grid-cols-12 gap-3 max-w-[560px]">
+        <div class="col-span-7 rounded-2xl p-3 flex items-center gap-3 bg-surface border border-lime/20 shimmer-legend">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-lime/15 border border-lime/25 text-lime">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 16l4-5 4 4 5-8"/></svg>
+          </div>
+          <div>
+            <div class="font-mono font-black text-[16px] leading-none text-pistachio">−62% <span class="text-[10px] font-normal text-lime" data-i18n="hero_kpi_label">وقت الهيكلة</span></div>
+            <div class="text-[11px] text-pistachio/60" data-i18n="hero_kpi_sub">3 أسابيع → 48 ساعة</div>
+          </div>
+        </div>
+        <div class="col-span-5 rounded-2xl p-3 bg-canvas border border-white/10">
+          <div class="font-mono text-[10px] tracking-widest text-pistachio/50">AVG SPONSOR CLOSE</div>
+          <div class="font-mono font-black text-[17px] text-pistachio">11.4 <span class="text-[11px] font-normal text-pistachio/60" data-i18n="hero_day">يوم</span> <span class="text-lime text-[11px]">▲ 2.3×</span></div>
+        </div>
+      </div>
+
+      <!-- Primary Action Buttons -->
+      <div class="pt-1 flex flex-wrap gap-4">
+        <button id="heroStartBtn" class="btn-lime px-7 h-[48px] text-[14.5px] inline-flex items-center gap-2.5 group">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span data-i18n="hero_btn_calc">ابدأ فحص منظمتك مجاناً</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="group-hover:translate-x-0.5 transition-transform"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <button id="heroDemoBtn" class="btn-glass px-6 h-[48px] text-[14px] inline-flex items-center gap-2.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span data-i18n="hero_btn_demo">معاينة لوحة العميل الحية</span>
+        </button>
+      </div>
+      <div class="text-[11px] font-mono text-pistachio/45 flex items-center gap-2">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <span data-i18n="hero_no_card">لا حاجة لبطاقة — التقرير التجريبي يُولّد أمامك في 90 ثانية</span>
+      </div>
+
+      <!-- Trust Partners Row -->
+      <div class="pt-5 border-t border-white/[0.08] flex flex-wrap items-center gap-6">
+        <div class="flex -space-x-2 space-x-reverse">
+          <img src="https://i.pravatar.cc/100?img=32" class="w-7 h-7 rounded-full border-2 border-canvas object-cover" alt="">
+          <img src="https://i.pravatar.cc/100?img=15" class="w-7 h-7 rounded-full border-2 border-canvas object-cover" alt="">
+          <img src="https://i.pravatar.cc/100?img=28" class="w-7 h-7 rounded-full border-2 border-canvas object-cover" alt="">
+          <div class="w-7 h-7 rounded-full border-2 border-canvas bg-elevated flex items-center justify-center text-[10px] font-mono font-bold text-pistachio">+340</div>
+        </div>
+        <div class="text-[13px] font-mono text-pistachio/70">
+          <span class="text-pistachio font-bold">AUC • GUC • Techne Summit • RiseUp • Enactus</span>
+          <span class="text-pistachio/45 hidden sm:inline" data-i18n="hero_rating"> — تقييم 4.9/5 على 127 مشروع</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hero 3D Card Visual Column -->
+    <div class="lg:col-span-5 reveal" style="transition-delay:120ms">
+      <div id="heroTilt" class="glass-panel rounded-3xl p-7 sm:p-9 relative overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border-lime/30" style="transform-style:preserve-3d; transition: transform 0.25s ease">
+        
+        <!-- Live Status Top Bar -->
+        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6 text-[12px] font-mono">
+          <div class="flex items-center gap-2 text-lime font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-lime animate-pulse shadow-[0_0_10px_#A3E635]"></span>
+            <span data-i18n="hero_card_status">999x CORE • LIVE</span>
+          </div>
+          <span class="text-pistachio/50 px-2.5 py-1 rounded bg-white/[0.04]" data-i18n="hero_latency">زمن الاستجابة: 14ms</span>
+        </div>
+
+        <!-- Centerpiece Real Logo Display -->
+        <div class="py-5 flex flex-col items-center justify-center relative">
+          <!-- ambient glow behind logo -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full blur-[42px] opacity-30" style="background: radial-gradient(circle, rgba(139,92,246,0.55) 0%, transparent 70%)"></div>
+          <div class="float-legend relative w-36 h-36 rounded-3xl overflow-hidden shadow-[0_0_45px_rgba(163,230,53,0.35)] border-2 border-lime/30" style="transform: translateZ(20px)">
+            <img src="logo_999x.jpg" alt="999x Logo" class="w-full h-full object-cover">
+          </div>
+          <span class="font-mono text-[11px] text-pistachio/45 tracking-[0.14em] mt-4" style="transform: translateZ(12px)" data-i18n="hero_shield_label">الدرع التنفيذي — 14ms</span>
+        </div>
+
+        <!-- Metric Dials Row -->
+        <div class="grid grid-cols-3 gap-3 mt-1">
+          <div class="p-3.5 rounded-2xl bg-canvas/70 border border-white/10 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-px bg-lime/25"></div>
+            <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="dial_health">HEALTH</div>
+            <div class="font-mono font-extrabold text-[20px] text-lime mt-0.5"><span class="count" data-target="88">88</span><span class="text-[12px] text-pistachio/60">/100</span></div>
+            <div class="h-1 rounded-full mt-1.5 bg-white/10 overflow-hidden"><div class="h-full bg-lime" style="width:88%"></div></div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-canvas/70 border border-white/10 text-center">
+            <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="dial_churn">CHURN</div>
+            <div class="font-mono font-extrabold text-[20px] text-pistachio mt-0.5">11%</div>
+            <div class="text-[10px] text-emerald-400 font-mono">▼ -23%</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-canvas/70 border border-white/10 text-center">
+            <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="dial_sponsors">SPONSORS</div>
+            <div class="font-mono font-extrabold text-[20px] text-pistachio mt-0.5">94%</div>
+            <div class="text-[10px] text-lime font-mono">● READY</div>
+          </div>
+        </div>
+
+        <!-- Real-Time Generated Tier Banner -->
+        <div class="mt-4 p-3.5 rounded-2xl bg-lime text-canvas flex items-center justify-between font-unbounded text-[12.5px] font-bold shadow-[0_8px_24px_rgba(163,230,53,0.38)] shimmer-legend">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-canvas text-lime flex items-center justify-center text-[12px]">★</span>
+            <span data-i18n="hero_tier_banner">Tier Gold — Fintech Match</span>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-canvas text-lime text-[11px] font-mono"><span>55K EGP</span> <span data-i18n="hero_tier_suffix">• مولّدة الآن</span></span>
+        </div>
+        <div class="mt-2.5 flex items-center justify-between text-[10.5px] font-mono text-pistachio/45">
+          <span>OpenRouter • Minimax M3</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-lime animate-pulse"></span> <span data-i18n="hero_streaming">بث مباشر 42 tok/s</span></span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUSTED MARQUEE -->
+<div class="relative z-10 border-y border-white/[0.06] bg-surface/50 backdrop-blur-md">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-3.5 flex flex-wrap items-center gap-4 sm:gap-6 text-[12.5px]">
+    <span class="font-mono tracking-widest text-[11px] text-pistachio/40" data-i18n="marquee_label">يعمل مع</span>
+    <span class="h-4 w-px hidden sm:block bg-white/10"></span>
+    <div class="marquee flex-1">
+      <div class="marquee-inner gap-8 font-mono text-pistachio/65">
+        <span>AUC Venture Lab</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>GUC Innovation Hub</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>Techne Summit 2024</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>RiseUp Cairo</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>Enactus Egypt</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>TEDx Cairo</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>AIESEC Egypt</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <!-- duplicate for loop -->
+        <span>AUC Venture Lab</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>GUC Innovation Hub</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>Techne Summit 2024</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>RiseUp Cairo</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+        <span>Enactus Egypt</span><span class="w-1 h-1 rounded-full bg-white/20 self-center"></span>
+      </div>
+    </div>
+    <span class="hidden md:inline-flex items-center gap-2 font-mono text-[11px] text-pistachio/50"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> <span data-i18n="marquee_response">متوسط وقت الرد 8 دقائق</span></span>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- PULSE 360° DIAGNOSTIC SECTION (Eye-Soothing & Spacious)                   -->
+<!-- ========================================================================= -->
+<section id="pulse" class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-24 reveal">
+  
+  <div class="mb-8 flex flex-wrap items-end justify-between gap-4 reveal">
+    <div class="space-y-2">
+      <span class="font-mono text-[11.5px] text-lime uppercase tracking-widest px-3 py-1 rounded-full bg-lime/10 border border-lime/25" data-i18n="pulse_tag">PULSE 360° DIAGNOSTIC — INSTANT</span>
+      <h2 class="font-display font-bold text-[28px] sm:text-[36px] text-pistachio leading-snug" data-i18n="pulse_title">
+        اختبر نبض منظمتك في 20 ثانية
+      </h2>
+      <p class="text-[13.5px] text-pistachio/60 max-w-[560px] font-sub" data-i18n="pulse_desc">اختر نوع فريقك ومعضلتك، ودع الخوارزمية تحسب مؤشر الصحة فوراً — بدون تسجيل. نفس محرك التشخيص داخل المنصة.</p>
+    </div>
+    <div class="hidden sm:inline-flex items-center gap-2 text-[12px] font-mono px-3 py-1.5 rounded-full bg-surface border border-white/10 text-pistachio/60" data-i18n="pulse_meta">بدون تسجيل • ذاكرة دلالية • 15ms</div>
+  </div>
+
+  <div class="glass-panel rounded-3xl p-7 sm:p-10 border-lime/25 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Inputs Column -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Organization Type Selector -->
+        <div>
+          <label class="text-[13px] font-sub font-bold text-pistachio block mb-2" data-i18n="pulse_label_type">1. نوع المنظمة:</label>
+          <div class="grid grid-cols-3 gap-2.5" id="pulseTypeBtns">
+            <button class="team-opt-btn active p-3 rounded-xl border border-lime bg-lime text-canvas text-center font-bold text-[12.5px] transition" data-type="STARTUP" data-i18n="type_startup">ستارتب</button>
+            <button class="team-opt-btn p-3 rounded-xl border border-white/10 bg-canvas text-pistachio text-center text-[12.5px] transition hover:border-lime/40" data-type="VOLUNTEER" data-i18n="type_volunteer">تيم تطوعي</button>
+            <button class="team-opt-btn p-3 rounded-xl border border-white/10 bg-canvas text-pistachio text-center text-[12.5px] transition hover:border-lime/40" data-type="EVENT" data-i18n="type_event">إيفينت</button>
+          </div>
+        </div>
+
+        <!-- Primary Friction -->
+        <div>
+          <label class="text-[13px] font-sub font-bold text-pistachio block mb-2" data-i18n="pulse_label_pain">2. المعضلة التشغيلية الأساسية:</label>
+          <select id="diagPain1" class="w-full h-11 rounded-xl px-3.5 bg-canvas border border-white/15 text-pistachio text-[13.5px] focus:border-lime outline-none transition">
+            <option value="churn" data-i18n-opt="pain_churn">تسرب الأعضاء بعد فترة قصيرة (High Churn Rate)</option>
+            <option value="hierarchy" data-i18n-opt="pain_hierarchy">فوضى المسؤوليات وتداخل الأدوار (No Clear RACI)</option>
+            <option value="sponsor" data-i18n-opt="pain_sponsor">صعوبة إقناع الرعاة وإغلاق العقود (Low Sponsor Close)</option>
+            <option value="delivery" data-i18n-opt="pain_delivery">تأخر تسليم المهام والالتزامات (Delayed Tasks)</option>
+          </select>
+        </div>
+
+        <!-- Team Size Slider -->
+        <div>
+          <div class="flex justify-between text-[13px] font-sub font-bold text-pistachio mb-2">
+            <span data-i18n="pulse_label_size">حجم الفريق:</span>
+            <span id="teamSizeVal" class="font-mono text-lime text-[14px]" data-i18n="pulse_size_val">25 فرداً</span>
+          </div>
+          <input type="range" id="teamSizeRange" min="5" max="150" value="25" class="w-full accent-lime bg-canvas h-2 rounded-lg cursor-pointer">
+        </div>
+
+        <!-- Recalculate Button -->
+        <button id="recalcDiagBtn" class="w-full h-12 btn-lime text-[14px] flex items-center justify-center gap-2">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span data-i18n="pulse_btn_calc">تحديث المؤشرات فوراً</span>
+        </button>
+      </div>
+
+      <!-- Results & Spider Radar Column -->
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-8 items-center">
+        
+        <!-- Radar Visualizer -->
+        <div class="p-5 rounded-3xl bg-canvas border border-lime/25 flex flex-col items-center shadow-lg">
+          <canvas id="spiderRadarCanvas" width="240" height="240" class="w-[240px] h-[240px]"></canvas>
+          <span class="font-mono text-[10.5px] text-pistachio/50 tracking-widest mt-2">PULSE RADAR • 4 AXIS</span>
+        </div>
+
+        <!-- Score & Prescription -->
+        <div class="space-y-4">
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono font-black text-[52px] text-lime leading-none" id="diagHealthScore">84</span>
+            <div>
+              <span class="font-mono text-[16px] text-pistachio/50">/100</span>
+              <span id="diagHealthTag" class="block mt-1 px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-lime/15 text-lime border border-lime/30" data-i18n="tag_stable">مستقر — يحتاج هيكلة</span>
+            </div>
+          </div>
+
+          <!-- 4 metrics bars -->
+          <div class="grid grid-cols-2 gap-2.5 text-[11px] font-mono">
+            <div class="rounded-xl p-2.5 bg-canvas border border-white/10">
+              <div class="flex justify-between"><span class="text-pistachio/50">HR STABILITY</span><span id="mHr" class="text-pistachio font-bold">71%</span></div>
+              <div class="h-1.5 rounded-full mt-1.5 bg-white/10 overflow-hidden"><div id="mHrBar" class="h-full bg-lime transition-all duration-700" style="width:71%"></div></div>
+            </div>
+            <div class="rounded-xl p-2.5 bg-canvas border border-white/10">
+              <div class="flex justify-between"><span class="text-pistachio/50">CHURN RISK</span><span id="mChurn" class="text-amber-300 font-bold">32%</span></div>
+              <div class="h-1.5 rounded-full mt-1.5 bg-white/10 overflow-hidden"><div id="mChurnBar" class="h-full bg-amber-400 transition-all duration-700" style="width:32%"></div></div>
+            </div>
+            <div class="rounded-xl p-2.5 bg-canvas border border-white/10">
+              <div class="flex justify-between"><span class="text-pistachio/50">SPONSOR</span><span id="mSponsor" class="text-violet-300 font-bold">68%</span></div>
+              <div class="h-1.5 rounded-full mt-1.5 bg-white/10 overflow-hidden"><div id="mSponsorBar" class="h-full bg-violet-400 transition-all duration-700" style="width:68%"></div></div>
+            </div>
+            <div class="rounded-xl p-2.5 bg-canvas border border-white/10">
+              <div class="flex justify-between"><span class="text-pistachio/50">VELOCITY</span><span id="mExec" class="text-pistachio font-bold">74%</span></div>
+              <div class="h-1.5 rounded-full mt-1.5 bg-white/10 overflow-hidden"><div id="mExecBar" class="h-full bg-pistachio transition-all duration-700" style="width:74%"></div></div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-canvas border border-white/10 text-[13px] leading-relaxed text-pistachio/85 font-sub relative overflow-hidden">
+            <span class="text-lime font-bold block mb-1 flex items-center gap-1.5" data-i18n="brief_label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> التوصية الفورية — AI Brief:</span>
+            <span id="diagBriefText" class="min-h-[44px] block" data-i18n="brief_sample">
+              اعتمد هيكل RACI من 3 مستويات وحدد حزم الرعاة Gold/Silver قبل إطلاق الحملة الإعلامية لتفادي ضياع الوقت.
+            </span>
+            <span id="typingDots" class="inline-flex gap-1 mt-1 opacity-0 transition-opacity"><span class="w-1 h-1 rounded-full bg-lime animate-bounce"></span><span class="w-1 h-1 rounded-full bg-lime animate-bounce" style="animation-delay:120ms"></span><span class="w-1 h-1 rounded-full bg-lime animate-bounce" style="animation-delay:240ms"></span></span>
+          </div>
+
+          <button id="downloadSampleReportBtn" class="w-full h-11 rounded-xl bg-surface hover:bg-elevated border border-lime/30 text-[13px] font-bold text-pistachio flex items-center justify-center gap-2 transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+            <span data-i18n="btn_pdf">تصدير تقرير PDF معتمد</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- BENTO GRID (The 4 Core Engines) - Spacious, Non-Cramped                  -->
+<!-- ========================================================================= -->
+<section id="modules" class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-24">
+  
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-4 reveal">
+    <div class="space-y-2">
+      <span class="font-mono text-[11.5px] text-violet uppercase tracking-widest px-3 py-1 rounded-full bg-violet/10 border border-violet/25" data-i18n="bento_tag">SYSTEM ENGINES — NEO-CYBER</span>
+      <h2 class="font-display font-bold text-[28px] sm:text-[36px] text-pistachio leading-snug" data-i18n="bento_title">
+        أربعة محركات — منظومة واحدة
+      </h2>
+      <p class="text-[13.5px] text-pistachio/60 max-w-[620px] font-sub" data-i18n="bento_sub">لا أدوات متناثرة. كل محرك يغذي الآخر: الهيكل يولّد الوصف الوظيفي، الوصف يغذي حزمة الرعاة، والخطة تتحول لتاسكات Kanban لحظياً.</p>
+    </div>
+    <div class="hidden sm:flex items-center gap-2 text-[11px] font-mono text-pistachio/45"><span class="w-2 h-2 rounded-full bg-lime"></span> <span data-i18n="bento_pipeline">4 محركات • خط إنتاج واحد • 48 ساعة</span></div>
+  </div>
+
+  <div id="bentoGrid" class="grid grid-cols-12 gap-6">
+    
+    <!-- Engine 1: RACI Hierarchy Tree (7 Cols) -->
+    <div class="col-span-12 lg:col-span-7 glass-panel rounded-3xl p-7 sm:p-8 flex flex-col justify-between bento-card reveal" style="transition-delay:60ms">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-display font-bold text-[19px] text-pistachio" data-i18n="eng_hr_title">محرك إعادة هيكلة الـ HR</h3>
+          <span class="font-mono text-[11px] text-lime px-2.5 py-1 rounded-lg bg-lime/10 border border-lime/25">RACI Hierarchy</span>
+        </div>
+        <p class="text-[14px] text-pistachio/75 mb-6 font-sub" data-i18n="eng_hr_desc">
+          هيكل تنظيمي شجري بمسؤوليات واضحة ومسار ترقية يقلل تسرب الأعضاء بنسبة 65%.
+        </p>
+
+        <!-- Department Clickable Nodes -->
+        <div class="grid grid-cols-4 gap-2.5">
+          <button class="dept-btn active p-3 rounded-2xl bg-elevated border border-lime/40 text-center transition hover:scale-105" data-dept="hr">
+            <div class="text-[12.5px] font-bold text-pistachio">HR</div>
+            <div class="text-[10px] text-lime font-mono">4 Members</div>
+          </button>
+          <button class="dept-btn p-3 rounded-2xl bg-canvas border border-white/10 text-center transition hover:scale-105" data-dept="ops">
+            <div class="text-[12.5px] font-bold text-pistachio">OPS</div>
+            <div class="text-[10px] text-pistachio/50 font-mono">5 Members</div>
+          </button>
+          <button class="dept-btn p-3 rounded-2xl bg-canvas border border-white/10 text-center transition hover:scale-105" data-dept="pr">
+            <div class="text-[12.5px] font-bold text-pistachio">PR</div>
+            <div class="text-[10px] text-pistachio/50 font-mono">6 Members</div>
+          </button>
+          <button class="dept-btn p-3 rounded-2xl bg-canvas border border-white/10 text-center transition hover:scale-105" data-dept="sponsors">
+            <div class="text-[12.5px] font-bold text-pistachio">Sponsors</div>
+            <div class="text-[10px] text-pistachio/50 font-mono">3 Members</div>
+          </button>
+        </div>
+
+        <div id="deptInsightBox" class="mt-4 p-4 rounded-2xl bg-canvas border border-white/10 text-[13px] leading-relaxed text-pistachio/85 font-sub" data-i18n="dept_hr_default">
+          <strong>HR:</strong> متابعة التقييم الأسبوعي، ومسار الـ Onboarding للحد من التسرب، وقياس رضا الأعضاء.
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[11.5px] font-mono text-pistachio/50">
+        <span data-i18n="raci_footer">RACI: مسؤول ومحاسب</span>
+        <span class="text-lime" data-i18n="mongo_sync">متزامن مع MongoDB</span>
+      </div>
+    </div>
+
+    <!-- Engine 2: Sponsor Pitch Studio (5 Cols) -->
+    <div class="col-span-12 lg:col-span-5 glass-panel rounded-3xl p-7 sm:p-8 flex flex-col justify-between bento-card reveal" style="transition-delay:110ms">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-display font-bold text-[19px] text-pistachio" data-i18n="eng_sponsor_title">استوديو عروض الرعاة</h3>
+          <span class="font-mono text-[11px] text-violet px-2.5 py-1 rounded-lg bg-violet/10 border border-violet/25">AI Pitch Deck</span>
+        </div>
+        <p class="text-[14px] text-pistachio/75 mb-6 font-sub" data-i18n="eng_sponsor_desc">
+          توليد حزم الرعاية ومطابقة القطاعات المستهدفة مع مسودات بريد شخصية.
+        </p>
+
+        <div class="space-y-3">
+          <div class="p-3.5 rounded-2xl bg-canvas border border-lime/30 flex justify-between items-center text-[13px]">
+            <div>
+              <span class="font-bold text-lime" data-i18n="tier_gold">الباقة الذهبية (Gold Tier)</span>
+              <span class="text-pistachio/60 block text-[11px] font-sub" data-i18n="tier_gold_desc">جناح رئيسي + كلمة افتتاحية</span>
+            </div>
+            <span class="font-mono font-bold text-pistachio text-[15px]">55K EGP</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-surface border border-white/10 flex justify-between items-center text-[13px]">
+            <div>
+              <span class="font-bold text-pistachio" data-i18n="tier_silver">الباقة الفضية (Silver Tier)</span>
+              <span class="text-pistachio/60 block text-[11px] font-sub" data-i18n="tier_silver_desc">لوجو المطبوعات + بوستات</span>
+            </div>
+            <span class="font-mono font-bold text-pistachio text-[15px]">30K EGP</span>
+          </div>
+        </div>
+      </div>
+
+      <button id="copySponsorEmailBtn" class="mt-6 w-full h-11 rounded-xl bg-lime text-canvas font-unbounded text-[12px] font-bold flex items-center justify-center gap-2">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span data-i18n="btn_copy_email">نسخ رسالة التواصل المولدّة</span>
+      </button>
+    </div>
+
+    <!-- Engine 3: WhatsApp Crisis Webhook (7 Cols) -->
+    <div class="col-span-12 lg:col-span-7 glass-panel rounded-3xl p-7 sm:p-8 flex flex-col justify-between bento-card reveal" style="transition-delay:160ms">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-display font-bold text-[19px] text-pistachio" data-i18n="eng_whatsapp_title">بوابة الطوارئ عبر واتساب</h3>
+          <span class="font-mono text-[11px] text-emerald-400 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25">58s Response</span>
+        </div>
+        <p class="text-[14px] text-pistachio/75 mb-5 font-sub" data-i18n="whatsapp_desc">
+          أرسل رسالة نصية أو صوتية؛ يقوم الذكاء الاصطناعي بتفريغها واقتراح خطة فورية.
+        </p>
+        
+        <!-- Interactive Scenario Pills -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button class="emergency-scenario-btn active px-3 py-1.5 rounded-xl text-[12px] font-bold bg-lime text-canvas transition" data-scenario="speaker" data-i18n="scen_speaker">
+            🚨 اعتذار متحدث
+          </button>
+          <button class="emergency-scenario-btn px-3 py-1.5 rounded-xl text-[12px] font-bold bg-canvas border border-white/10 text-pistachio transition hover:border-lime/40" data-scenario="churn" data-i18n="scen_churn">
+            📉 انسحاب أعضاء
+          </button>
+          <button class="emergency-scenario-btn px-3 py-1.5 rounded-xl text-[12px] font-bold bg-canvas border border-white/10 text-pistachio transition hover:border-lime/40" data-scenario="sponsor" data-i18n="scen_sponsor">
+            💰 تعديل باقة راعي
+          </button>
+        </div>
+
+        <!-- Chat Bubble Simulation -->
+        <div class="p-4 rounded-2xl bg-canvas border border-white/10 text-[13px] space-y-2.5 font-sub">
+          <div class="text-emerald-300" id="chatUserMsg" data-i18n="chat_user_speaker">"اعتذر المتحدث الرئيسي قبل المؤتمر بيومين!"</div>
+          <div class="text-lime pt-2 border-t border-white/10" id="chatBotMsg" data-i18n="chat_bot_speaker">"حل مقترح: 3 متحدثين بدلاء من شبكة 999x تم التواصل معهم وتعديل جدول الجلسات فوراً."</div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-[11.5px] font-mono text-pistachio/50 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span data-i18n="webhook_footer">Webhook مباشر إلى غرفة العمليات</span>
+      </div>
+    </div>
+
+    <!-- Engine 4: Live Kanban & Sprints (5 Cols) -->
+    <div class="col-span-12 lg:col-span-5 glass-panel rounded-3xl p-7 sm:p-8 flex flex-col justify-between bento-card reveal" style="transition-delay:210ms">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-display font-bold text-[19px] text-pistachio" data-i18n="eng_kanban_title">لوحة المهام (Kanban)</h3>
+          <span class="font-mono text-[11px] text-lime px-2.5 py-1 rounded-lg bg-lime/10 border border-lime/25">SSE Streaming</span>
+        </div>
+        <p class="text-[14px] text-pistachio/75 mb-6 font-sub" data-i18n="eng_kanban_desc">
+          تتبع زمني وربط كل مهمة بمخرجات العميل مباشرة دون تشتت.
+        </p>
+
+        <div class="p-4 rounded-2xl bg-canvas border border-lime/30 text-[13px] space-y-2">
+          <div class="flex justify-between font-mono text-[11.5px] text-lime">
+            <span>RiseUp • PR Plan</span>
+            <span data-i18n="kanban_generated">تم توليد 72%</span>
+          </div>
+          <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+            <div class="h-full bg-lime rounded-full w-[72%]"></div>
+          </div>
+          <div class="text-[11px] font-mono text-pistachio/50 flex justify-between pt-1">
+            <span data-i18n="kanban_model">النموذج: Minimax M3</span>
+            <span class="text-lime">48 tok/s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/[0.08] text-[11.5px] font-mono text-pistachio/50 flex justify-between">
+        <span data-i18n="kanban_stat_tasks">18 تاسك منجز هذا الأسبوع</span>
+        <span class="text-lime" data-i18n="kanban_ontime">100% في الوقت</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Proof Quote — Single Real Testimonial (not carousel) -->
+  <div class="mt-8 rounded-3xl p-[1px] bg-gradient-to-r from-lime/25 via-violet/20 to-transparent reveal">
+    <div class="rounded-[23px] p-6 sm:p-7 bg-canvas border border-white/[0.04] flex flex-col sm:flex-row gap-5 items-start">
+      <img src="https://i.pravatar.cc/100?img=12" class="w-12 h-12 rounded-full object-cover border-2 border-lime/30 shrink-0" alt="">
+      <div>
+        <div class="text-[13.5px] leading-7 text-pistachio/90 font-sub" data-i18n="quote_main">“كنا نضيع 3 أسابيع كل سيزون لإعادة هيكلة اللجان. مع 999x استلمنا هيكل RACI + وصف وظيفي + Onboarding Kit في <span class="text-lime font-bold">يومين</span>، ونسبة التسرب نزلت من 41% إلى 12%.”</div>
+        <div class="mt-2 text-[12px] font-mono text-pistachio/50" data-i18n="quote_author">— سارة المنشاوي، Head of Operations • Enactus Cairo • 47 عضو • 3 رعاة مغلقين في 9 أيام</div>
+      </div>
+      <div class="hidden sm:flex items-center gap-1.5 ml-auto shrink-0 text-amber-300 text-[12px]">★★★★★ <span class="text-pistachio/45 font-mono">4.9/5</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- ROADMAP SECTION (Spacious 4 Stations Pipeline)                            -->
+<!-- ========================================================================= -->
+<section id="roadmap" class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-24 reveal">
+  <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime/30 to-transparent"></div>
+    
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+      <div>
+        <span class="font-mono text-[11.5px] text-pistachio/50 tracking-widest uppercase" data-i18n="roadmap_tag">خارطة الطريق</span>
+        <h2 class="font-display font-bold text-[26px] sm:text-[36px] text-pistachio mt-1" data-i18n="roadmap_title">
+          خارطة الطريق في 4 محطات
+        </h2>
+      </div>
+      <div class="px-4 py-2 rounded-xl bg-lime/10 border border-lime/25 text-lime font-mono text-[12.5px]">
+        <span class="w-2 h-2 rounded-full bg-lime inline-block mr-1"></span>
+        <span data-i18n="roadmap_eta">متوسط التنفيذ: 11 يوماً</span>
+      </div>
+    </div>
+
+    <div class="relative mt-2">
+      <div class="hidden lg:block absolute top-[28px] left-6 right-6 h-px bg-white/10"></div>
+      <div class="hidden lg:block absolute top-[28px] left-6 h-px w-[36%] bg-lime shadow-[0_0_10px_rgba(163,230,53,0.6)]"></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+      
+      <div class="p-6 rounded-2xl bg-canvas border border-lime/30 space-y-2 relative">
+        <div class="hidden lg:flex absolute -top-3 left-6 w-7 h-7 rounded-full bg-lime text-canvas items-center justify-center font-mono font-black text-[12px]">✓</div>
+        <div class="font-mono font-bold text-lime text-[18px]">01</div>
+        <h4 class="font-sub font-bold text-[15px] text-pistachio" data-i18n="step_1_title">التشخيص والتنظيف</h4>
+        <p class="text-[12.5px] leading-6 text-pistachio/70" data-i18n="step_1_desc">فحص Pulse 360° وتحديد الفجوات وإصدار التقرير الأولي.</p>
+        <div class="text-[11px] font-mono text-lime mt-1" data-i18n="roadmap_dur_1">2 أيام • تقرير أولي</div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-surface border border-lime/40 shadow-[0_0_20px_rgba(163,230,53,0.15)] space-y-2 relative">
+        <div class="hidden lg:flex absolute -top-3 left-6 w-7 h-7 rounded-full bg-lime text-canvas items-center justify-center font-mono font-black text-[12px] animate-pulse">●</div>
+        <div class="font-mono font-bold text-lime text-[18px]">02</div>
+        <h4 class="font-sub font-bold text-[15px] text-pistachio" data-i18n="step_2_title">الهيكلة وRACI</h4>
+        <p class="text-[12.5px] leading-6 text-pistachio/70" data-i18n="step_2_desc">بطاقات المهام، وأوصاف الأدوار، وبروتوكول الـ Onboarding.</p>
+        <div class="text-[11px] font-mono text-pistachio/60 mt-1" data-i18n="roadmap_dur_2">3–5 أيام • Inline Review</div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-canvas border border-white/10 space-y-2 opacity-90">
+        <div class="font-mono font-bold text-pistachio/50 text-[18px]">03</div>
+        <h4 class="font-sub font-bold text-[15px] text-pistachio" data-i18n="step_3_title">حملة الرعاة</h4>
+        <p class="text-[12.5px] leading-6 text-pistachio/70" data-i18n="step_3_desc">تجهيز الـ Pitch Deck ومطابقة الرعاة وإيميلات التواصل.</p>
+        <div class="text-[11px] font-mono text-pistachio/40 mt-1" data-i18n="roadmap_dur_3">5–7 أيام • جاهز للإرسال</div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-canvas border border-white/10 space-y-2 opacity-90">
+        <div class="font-mono font-bold text-pistachio/50 text-[18px]">04</div>
+        <h4 class="font-sub font-bold text-[15px] text-pistachio" data-i18n="step_4_title">المتابعة والاعتماد</h4>
+        <p class="text-[12.5px] leading-6 text-pistachio/70" data-i18n="step_4_desc">تقرير شهري مختوم بكود QR مشفر وضمان الجودة.</p>
+        <div class="text-[11px] font-mono text-pistachio/40 mt-1" data-i18n="roadmap_dur_4">مستمر • PDF مختوم</div>
+      </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- 999x INTERNAL OPS WAR ROOM (#warroom) — Multi-Tenant Cockpit              -->
+<!-- ========================================================================= -->
+<section id="warroom" class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-24 reveal">
+  
+  <!-- Section Header -->
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+    <div class="space-y-2">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-lime animate-pulse shadow-[0_0_12px_#A3E635]"></span>
+        <span class="font-mono text-[11.5px] text-lime uppercase tracking-widest px-3 py-1 rounded-full bg-lime/10 border border-lime/25" data-i18n="warroom_tag">999x COCKPIT — INTERNAL OPS WAR ROOM</span>
+      </div>
+      <h2 class="font-display font-bold text-[28px] sm:text-[38px] text-pistachio leading-snug" data-i18n="warroom_title">
+        قمرة العمليات المركزية — إدارة المنظومة الحية
+      </h2>
+      <p class="text-[14px] text-pistachio/70 max-w-[660px] font-sub" data-i18n="warroom_desc">
+        منصة العمليات الموحدة لتيم 999x: رصد فوري للعملاء، لوحة كانبان تفاعلية، استوديو اختبار نماذج الذكاء الاصطناعي، وختم التوثيق المشفر.
+      </p>
+    </div>
+
+    <!-- Live Telemetry Badges -->
+    <div class="flex flex-wrap gap-2 text-[11px] font-mono">
+      <span class="px-3 py-1.5 rounded-xl bg-surface border border-lime/25 text-lime flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
+        <span data-i18n="warroom_badge_pods">4 خلايا عمليات نشطة</span>
+      </span>
+      <span class="px-3 py-1.5 rounded-xl bg-surface border border-white/10 text-pistachio/70">
+        <span class="text-lime font-bold">14ms</span> Cache L2
+      </span>
+      <span class="px-3 py-1.5 rounded-xl bg-surface border border-white/10 text-emerald-400">
+        100% SLA On-Time
+      </span>
+    </div>
+  </div>
+
+  <!-- Cockpit Container with Glassmorphism -->
+  <div class="glass-panel rounded-3xl p-6 sm:p-9 border-lime/25 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)]">
+    
+    <!-- Tab Navigation Navigation Buttons -->
+    <div class="flex flex-wrap gap-2.5 border-b border-white/[0.08] pb-5 mb-8">
+      <button class="warroom-tab-btn active px-4 sm:px-5 py-2.5 rounded-xl text-[13px] font-bold transition flex items-center gap-2 bg-lime text-canvas" data-tab="kanban">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        <span data-i18n="tab_kanban">لوحة المهام (Kanban)</span>
+      </button>
+
+      <button class="warroom-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-[13px] font-bold transition flex items-center gap-2 bg-canvas border border-white/10 text-pistachio/80 hover:text-pistachio hover:border-lime/40" data-tab="ai-studio">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span data-i18n="tab_ai_studio">استوديو نماذج الـ AI</span>
+      </button>
+
+      <button class="warroom-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-[13px] font-bold transition flex items-center gap-2 bg-canvas border border-white/10 text-pistachio/80 hover:text-pistachio hover:border-lime/40" data-tab="crm">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span data-i18n="tab_crm">سجل العملاء (CRM Ledger)</span>
+      </button>
+
+      <button class="warroom-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-[13px] font-bold transition flex items-center gap-2 bg-canvas border border-white/10 text-pistachio/80 hover:text-pistachio hover:border-lime/40" data-tab="verification">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="tab_verify">التوثيق المشفر (QR Seal)</span>
+      </button>
+    </div>
+
+    <!-- TAB PANE 1: MATRIX KANBAN BOARD -->
+    <div id="paneKanban" class="warroom-pane block space-y-6">
+      
+      <!-- Filters and Actions Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 text-[12px] font-mono">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-pistachio/50" data-i18n="kanban_filter_label">تصفية الخدمة:</span>
+          <button class="kanban-filter-btn active px-2.5 py-1 rounded-lg bg-lime text-canvas font-bold" data-filter="all" data-i18n="filter_all">الكل (12)</button>
+          <button class="kanban-filter-btn px-2.5 py-1 rounded-lg bg-canvas border border-white/10 text-pistachio/70 hover:border-lime/30" data-filter="hr" data-i18n="filter_hr">HR (5)</button>
+          <button class="kanban-filter-btn px-2.5 py-1 rounded-lg bg-canvas border border-white/10 text-pistachio/70 hover:border-lime/30" data-filter="sponsor" data-i18n="filter_sponsor">الرعاة (4)</button>
+          <button class="kanban-filter-btn px-2.5 py-1 rounded-lg bg-canvas border border-white/10 text-pistachio/70 hover:border-lime/30" data-filter="pr" data-i18n="filter_pr">PR (3)</button>
+        </div>
+
+        <button id="simulateTaskMoveBtn" class="px-3.5 py-1.5 rounded-xl bg-surface border border-lime/30 text-lime hover:bg-lime hover:text-canvas font-bold text-[11.5px] transition flex items-center gap-2">
+          <span>⚡</span>
+          <span data-i18n="btn_simulate_sprint">محاكاة تقدم خطوة في الـ Sprint</span>
+        </button>
+      </div>
+
+      <!-- 4 Columns Kanban Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Column 1: Backlog -->
+        <div class="rounded-2xl p-4 bg-canvas border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-white/40"></span>
+                <span class="font-bold text-[13px] text-pistachio" data-i18n="col_backlog">قائمة الانتظار (Backlog)</span>
+              </div>
+              <span class="font-mono text-[11px] text-pistachio/50 px-2 py-0.5 rounded bg-white/[0.05]">2</span>
+            </div>
+
+            <!-- Task Cards -->
+            <div class="space-y-3" id="colBacklogCards">
+              <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-2 hover:border-lime/40 transition">
+                <div class="flex justify-between items-start">
+                  <span class="px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-amber-400/15 text-amber-300 border border-amber-400/25">HIGH PRIORITY</span>
+                  <span class="text-[10px] font-mono text-pistachio/50">Techne</span>
+                </div>
+                <div class="text-[12.5px] font-bold text-pistachio">صياغة باقات الرعاة التكنولوجية</div>
+                <div class="flex items-center justify-between text-[10.5px] font-mono text-pistachio/50 pt-1">
+                  <span>سارة م.</span>
+                  <span>ETA: 24h</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-2 hover:border-lime/40 transition">
+                <div class="flex justify-between items-start">
+                  <span class="px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-white/10 text-pistachio/70">NORMAL</span>
+                  <span class="text-[10px] font-mono text-pistachio/50">AUC V-Lab</span>
+                </div>
+                <div class="text-[12.5px] font-bold text-pistachio">تنظيف شيتات الـ PR القديمة</div>
+                <div class="flex items-center justify-between text-[10.5px] font-mono text-pistachio/50 pt-1">
+                  <span>كريم ت.</span>
+                  <span>ETA: 48h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: In Progress (AI Processing) -->
+        <div class="rounded-2xl p-4 bg-canvas border border-lime/30 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-lime"></div>
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+                <span class="font-bold text-[13px] text-lime" data-i18n="col_inprogress">توليد الذكاء الاصطناعي</span>
+              </div>
+              <span class="font-mono text-[11px] text-lime font-bold px-2 py-0.5 rounded bg-lime/15 border border-lime/25">LIVE</span>
+            </div>
+
+            <!-- Task Cards -->
+            <div class="space-y-3" id="colProgressCards">
+              <div class="p-3.5 rounded-xl bg-surface border border-lime/30 space-y-2.5 shimmer-legend">
+                <div class="flex justify-between items-start">
+                  <span class="px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">CRITICAL</span>
+                  <span class="text-[10px] font-mono text-lime font-bold">Enactus Cairo</span>
+                </div>
+                <div class="text-[12.5px] font-bold text-pistachio">إعادة هيكلة خلايا الـ HR الثلاثية</div>
+                
+                <!-- Progress indicator -->
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[10px] font-mono text-lime">
+                    <span>Minimax M3</span>
+                    <span id="kanbanStreamPct">74%</span>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div id="kanbanStreamBar" class="h-full bg-lime rounded-full transition-all duration-300" style="width: 74%"></div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between text-[10.5px] font-mono text-pistachio/50 pt-1">
+                  <span>بث 48 tok/s</span>
+                  <span class="text-lime">Elapsed: 1m 20s</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Review & QA -->
+        <div class="rounded-2xl p-4 bg-canvas border border-violet/30 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-violet animate-pulse"></span>
+                <span class="font-bold text-[13px] text-pistachio" data-i18n="col_review">المراجعة والتدقيق</span>
+              </div>
+              <span class="font-mono text-[11px] text-violet font-bold px-2 py-0.5 rounded bg-violet/15">1</span>
+            </div>
+
+            <!-- Task Cards -->
+            <div class="space-y-3" id="colReviewCards">
+              <div class="p-3.5 rounded-xl bg-surface border border-white/10 space-y-2 hover:border-violet/40 transition">
+                <div class="flex justify-between items-start">
+                  <span class="px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-violet/20 text-violet border border-violet/30">QA STAGE</span>
+                  <span class="text-[10px] font-mono text-pistachio/50">RiseUp 2026</span>
+                </div>
+                <div class="text-[12.5px] font-bold text-pistachio">تدقيق مصفوفة استجابة الأزمات</div>
+                <div class="flex items-center justify-between text-[10.5px] font-mono text-pistachio/50 pt-1">
+                  <span>أحمد ن. (Lead)</span>
+                  <span class="text-amber-300">Inline Review</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Done & Verified -->
+        <div class="rounded-2xl p-4 bg-canvas border border-emerald-500/30 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span class="font-bold text-[13px] text-emerald-300" data-i18n="col_done">معتمد ومسلّم للعميل</span>
+              </div>
+              <span class="font-mono text-[11px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/15">3</span>
+            </div>
+
+            <!-- Task Cards -->
+            <div class="space-y-3" id="colDoneCards">
+              <div class="p-3.5 rounded-xl bg-surface border border-emerald-500/20 space-y-2">
+                <div class="flex justify-between items-start">
+                  <span class="px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">VERIFIED ✓</span>
+                  <span class="text-[10px] font-mono text-pistachio/50">GUC Hub</span>
+                </div>
+                <div class="text-[12.5px] font-bold text-pistachio">وثيقة RACI كاملة + Onboarding Kit</div>
+                <div class="flex items-center justify-between text-[10.5px] font-mono text-emerald-400/80 pt-1">
+                  <span>QR Seal #999-42</span>
+                  <span>تسليم في 41 ساعة</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB PANE 2: OPENROUTER AI MODEL STUDIO -->
+    <div id="paneAiStudio" class="warroom-pane hidden space-y-6">
+      
+      <!-- Studio Header / Model Telemetry -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <div class="model-opt-btn active p-4 rounded-2xl bg-surface border border-lime cursor-pointer transition" data-model="claude">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-[14px] text-lime">Minimax Minimax M3</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-lime/15 text-lime">RECOMMENDED</span>
+          </div>
+          <p class="text-[12px] text-pistachio/70 font-sub mb-2.5">المعيار الذهبي لهندسة الموارد البشرية وكتابة عروض الرعاة الاستراتيجية.</p>
+          <div class="flex justify-between text-[11px] font-mono text-pistachio/50 border-t border-white/[0.08] pt-2">
+            <span>Latency: <strong class="text-lime">14ms (Cache)</strong></span>
+            <span>54 tok/s</span>
+          </div>
+        </div>
+
+        <div class="model-opt-btn p-4 rounded-2xl bg-canvas border border-white/10 cursor-pointer transition hover:border-lime/40" data-model="gpt4o">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-[14px] text-pistachio">Minimax Minimax M3</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono text-pistachio/50">ULTRA-FAST</span>
+          </div>
+          <p class="text-[12px] text-pistachio/70 font-sub mb-2.5">المعالجة السريعة وتنظيف ملفات الداتا وتصنيف رسائل الطوارئ عبر واتساب.</p>
+          <div class="flex justify-between text-[11px] font-mono text-pistachio/50 border-t border-white/[0.08] pt-2">
+            <span>Latency: <strong class="text-pistachio">18ms</strong></span>
+            <span>68 tok/s</span>
+          </div>
+        </div>
+
+        <div class="model-opt-btn p-4 rounded-2xl bg-canvas border border-white/10 cursor-pointer transition hover:border-lime/40" data-model="deepseek">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-[14px] text-pistachio">Minimax M3 Reasoning</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono text-violet font-bold bg-violet/15">DEEP LOGIC</span>
+          </div>
+          <p class="text-[12px] text-pistachio/70 font-sub mb-2.5">مصفوفات التفكير المنطقي المعقد، ومطابقة الرعاة ذوي الميزانيات الضخمة.</p>
+          <div class="flex justify-between text-[11px] font-mono text-pistachio/50 border-t border-white/[0.08] pt-2">
+            <span>Latency: <strong class="text-pistachio">38ms</strong></span>
+            <span>42 tok/s</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Interactive Prompt Tester -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-canvas border border-lime/25 space-y-4">
+        
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-[13px] text-pistachio" data-i18n="studio_prompt_label">اختبار التوجيه الهندسي (Prompt Sandbox):</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.06] text-lime">JSON Mode Enforced</span>
+          </div>
+
+          <!-- Preset Prompts Chips -->
+          <div class="flex flex-wrap gap-2 text-[11px] font-mono">
+            <button class="prompt-chip active px-2.5 py-1 rounded-lg bg-lime text-canvas font-bold transition" data-scenario="hr">HR Churn Directive</button>
+            <button class="prompt-chip px-2.5 py-1 rounded-lg bg-surface border border-white/10 text-pistachio/70 hover:border-lime/30 transition" data-scenario="sponsor">Fintech Pitch Deck</button>
+            <button class="prompt-chip px-2.5 py-1 rounded-lg bg-surface border border-white/10 text-pistachio/70 hover:border-lime/30 transition" data-scenario="crisis">Keynote Drop Recovery</button>
+          </div>
+        </div>
+
+        <div class="relative">
+          <textarea id="studioPromptInput" rows="3" class="w-full p-3.5 rounded-xl bg-surface border border-white/15 text-pistachio text-[13px] font-mono focus:border-lime outline-none transition" dir="ltr">You are 999x Executive Operations Intelligence Engine. Diagnose HR churn risk for team of 35, prescribe 3-tier RACI roles, and output strict JSON with milestones and zero ambiguity.</textarea>
+          <button id="runAiStudioBtn" class="absolute bottom-3 left-3 px-5 py-2 rounded-xl btn-lime text-[12.5px] font-bold flex items-center gap-2">
+            <span id="runAiIcon">⚡</span>
+            <span data-i18n="btn_run_model">تشغيل وبث المخرجات</span>
+          </button>
+        </div>
+
+        <!-- Terminal Output Screen -->
+        <div class="rounded-xl p-4 bg-[#0a0210] border border-white/10 font-mono text-[12px] space-y-2 relative overflow-hidden">
+          <div class="flex justify-between items-center border-b border-white/[0.08] pb-2 text-pistachio/50 text-[11px]">
+            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span> <span id="studioModelLabel">Minimax M3 • Semantic Cache Hit</span></span>
+            <span id="studioTokenStats">Tokens: 184 | Cost Saved: $0.0032 | 14ms</span>
+          </div>
+          <pre id="studioOutputCode" class="text-lime/90 whitespace-pre-wrap leading-relaxed max-h-[160px] overflow-y-auto">{
+  "status": "OPERATIONAL_SUCCESS",
+  "orgHealthProjected": 88,
+  "raciHierarchy": [
+    { "role": "Head of Ops", "accountableFor": "Milestone delivery & Budget" },
+    { "role": "HR Lead", "responsibleFor": "Weekly check-in & 3-step onboarding" },
+    { "role": "Pod Leads", "consulted": "Workload balancing & blockers" }
+  ],
+  "antiChurnAction": "Institute 10-min daily asynchronous standup on Kanban matrix.",
+  "validationSeal": "999X-MINIMAX-M3-VERIFIED"
+}</pre>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB PANE 3: CLIENT INTELLIGENCE LEDGER (CRM) -->
+    <div id="paneCrm" class="warroom-pane hidden space-y-6">
+      
+      <!-- Metrics Overview Header -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div class="p-3.5 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="crm_total_clients">إجمالي الفرق المدعومة</div>
+          <div class="font-mono font-bold text-[22px] text-pistachio mt-0.5">340+</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-canvas border border-lime/30">
+          <div class="text-[10.5px] font-mono text-lime" data-i18n="crm_active_sprints">SPRINTS قيد التنفيذ</div>
+          <div class="font-mono font-bold text-[22px] text-lime mt-0.5">18</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="crm_avg_health">متوسط مؤشر الصحة</div>
+          <div class="font-mono font-bold text-[22px] text-pistachio mt-0.5">89/100</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-[10.5px] font-mono text-pistachio/50" data-i18n="crm_deals_closed">عقود رعاة مغلقة</div>
+          <div class="font-mono font-bold text-[22px] text-pistachio mt-0.5">EGP 2.4M</div>
+        </div>
+      </div>
+
+      <!-- Ledger Table -->
+      <div class="rounded-2xl bg-canvas border border-white/10 overflow-x-auto">
+        <table class="w-full text-start text-[13px] border-collapse min-w-[640px]">
+          <thead>
+            <tr class="border-b border-white/[0.08] text-[11px] font-mono text-pistachio/50 bg-surface/50">
+              <th class="p-3.5 text-start" data-i18n="th_org">المنظمة / الفريق</th>
+              <th class="p-3.5 text-start" data-i18n="th_type">النوع</th>
+              <th class="p-3.5 text-start" data-i18n="th_health">مؤشر الصحة</th>
+              <th class="p-3.5 text-start" data-i18n="th_stage">المرحلة الحالية</th>
+              <th class="p-3.5 text-start" data-i18n="th_lead">مدير العمليات</th>
+              <th class="p-3.5 text-start" data-i18n="th_action">إجراء سريع</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.05] font-sub">
+            
+            <tr class="hover:bg-surface/60 transition">
+              <td class="p-3.5 font-bold text-pistachio flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                AUC Venture Lab
+              </td>
+              <td class="p-3.5 font-mono text-[11px] text-pistachio/60">STARTUP</td>
+              <td class="p-3.5 font-mono font-bold text-lime">94/100</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[11px] font-mono bg-lime/10 text-lime border border-lime/20">Sponsor Outreach</span></td>
+              <td class="p-3.5 text-pistachio/80">عمر خليل</td>
+              <td class="p-3.5"><button class="px-3 py-1 rounded-lg bg-surface hover:bg-elevated text-lime text-[11px] font-mono border border-lime/30 transition" onclick="showToast('modal_approved_tag')">Inspect Pod</button></td>
+            </tr>
+
+            <tr class="hover:bg-surface/60 transition">
+              <td class="p-3.5 font-bold text-pistachio flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-lime"></span>
+                Enactus Cairo
+              </td>
+              <td class="p-3.5 font-mono text-[11px] text-pistachio/60">VOLUNTEER</td>
+              <td class="p-3.5 font-mono font-bold text-lime">88/100</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[11px] font-mono bg-violet/15 text-violet border border-violet/30">RACI Tree Live</span></td>
+              <td class="p-3.5 text-pistachio/80">سارة المنشاوي</td>
+              <td class="p-3.5"><button class="px-3 py-1 rounded-lg bg-surface hover:bg-elevated text-lime text-[11px] font-mono border border-lime/30 transition" onclick="showToast('modal_approved_tag')">Inspect Pod</button></td>
+            </tr>
+
+            <tr class="hover:bg-surface/60 transition">
+              <td class="p-3.5 font-bold text-pistachio flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                RiseUp Summit 2026
+              </td>
+              <td class="p-3.5 font-mono text-[11px] text-pistachio/60">EVENT</td>
+              <td class="p-3.5 font-mono font-bold text-amber-300">91/100</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[11px] font-mono bg-amber-400/15 text-amber-300 border border-amber-400/25">Speaker Lineup QA</span></td>
+              <td class="p-3.5 text-pistachio/80">كريم طارق</td>
+              <td class="p-3.5"><button class="px-3 py-1 rounded-lg bg-surface hover:bg-elevated text-lime text-[11px] font-mono border border-lime/30 transition" onclick="showToast('modal_approved_tag')">Inspect Pod</button></td>
+            </tr>
+
+            <tr class="hover:bg-surface/60 transition">
+              <td class="p-3.5 font-bold text-pistachio flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-white/40"></span>
+                Techne Innovation Pod
+              </td>
+              <td class="p-3.5 font-mono text-[11px] text-pistachio/60">STARTUP</td>
+              <td class="p-3.5 font-mono font-bold text-pistachio/80">82/100</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.08] text-pistachio/70">Diagnosis Stage</span></td>
+              <td class="p-3.5 text-pistachio/80">نور العطار</td>
+              <td class="p-3.5"><button class="px-3 py-1 rounded-lg bg-surface hover:bg-elevated text-lime text-[11px] font-mono border border-lime/30 transition" onclick="showToast('modal_approved_tag')">Inspect Pod</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB PANE 4: CRYPTOGRAPHIC VERIFICATION SEAL & QR -->
+    <div id="paneVerification" class="warroom-pane hidden space-y-6">
+      
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Certificate Info -->
+        <div class="lg:col-span-7 space-y-4 font-sub">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11.5px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+            <span>🛡️</span>
+            <span>ISO/IEC 27001 ALIGNED • CRYPTOGRAPHIC AUDIT</span>
+          </div>
+
+          <h3 class="font-display font-bold text-[22px] sm:text-[26px] text-pistachio" data-i18n="verify_title">
+            شهادة اعتماد تشغيلي موثقة رقمياً
+          </h3>
+
+          <p class="text-[13.5px] leading-relaxed text-pistachio/75" data-i18n="verify_desc">
+            كل وثيقة تصدر عن 999x تُدمغ بختم تجزئة مشفر (Cryptographic Hash) وكود QR تفاعلي ينقل الراعي أو المستثمر فوراً لصفحة تحقق مستقلة تثبت صحة الهيكل وتاريخ الاعتماد الرسمي.
+          </p>
+
+          <div class="space-y-2 text-[12px] font-mono">
+            <div class="p-2.5 rounded-xl bg-canvas border border-white/10 flex justify-between">
+              <span class="text-pistachio/50">HASH:</span>
+              <span class="text-lime">SHA256: 999x_7f8a9b2c4d5e6f1a8b9c...</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-canvas border border-white/10 flex justify-between">
+              <span class="text-pistachio/50">TIMESTAMP:</span>
+              <span class="text-pistachio">2026-09-05T20:45:12Z (Immutable Ledger)</span>
+            </div>
+          </div>
+
+          <button id="openPdfModalBtn" class="btn-lime px-6 h-12 text-[13.5px] font-bold inline-flex items-center gap-2.5">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+            <span data-i18n="btn_view_pdf_seal">معاينة وثيقة الاعتماد الرسمية (PDF Deck)</span>
+          </button>
+        </div>
+
+        <!-- Right: Real Interactive QR Preview Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="p-6 rounded-3xl bg-surface border-2 border-lime/30 shadow-[0_0_40px_rgba(163,230,53,0.18)] text-center space-y-4 max-w-[300px] w-full">
+            
+            <div class="w-10 h-10 rounded-xl overflow-hidden mx-auto border border-lime/40">
+              <img src="logo_999x.jpg" alt="999x Logo" class="w-full h-full object-cover">
+            </div>
+
+            <!-- SVG QR Code -->
+            <div class="p-3 bg-white rounded-2xl inline-block shadow-lg mx-auto">
+              <svg width="160" height="160" viewBox="0 0 100 100" fill="#150320">
+                <!-- QR Finder 1 -->
+                <rect x="5" y="5" width="26" height="26" fill="#150320"/>
+                <rect x="9" y="9" width="18" height="18" fill="#ffffff"/>
+                <rect x="13" y="13" width="10" height="10" fill="#150320"/>
+                <!-- QR Finder 2 -->
+                <rect x="69" y="5" width="26" height="26" fill="#150320"/>
+                <rect x="73" y="9" width="18" height="18" fill="#ffffff"/>
+                <rect x="77" y="13" width="10" height="10" fill="#150320"/>
+                <!-- QR Finder 3 -->
+                <rect x="5" y="69" width="26" height="26" fill="#150320"/>
+                <rect x="9" y="73" width="18" height="18" fill="#ffffff"/>
+                <rect x="13" y="77" width="10" height="10" fill="#150320"/>
+                <!-- Data blocks -->
+                <rect x="36" y="8" width="6" height="6"/><rect x="46" y="12" width="6" height="6"/><rect x="56" y="8" width="6" height="6"/>
+                <rect x="36" y="24" width="6" height="6"/><rect x="48" y="22" width="8" height="6"/><rect x="58" y="26" width="6" height="6"/>
+                <rect x="10" y="38" width="6" height="6"/><rect x="22" y="44" width="6" height="6"/><rect x="34" y="38" width="6" height="6"/>
+                <rect x="46" y="40" width="10" height="10" fill="#A3E635"/><rect x="62" y="42" width="6" height="6"/><rect x="74" y="38" width="8" height="6"/>
+                <rect x="88" y="44" width="6" height="6"/><rect x="36" y="54" width="8" height="6"/><rect x="52" y="56" width="6" height="6"/>
+                <rect x="68" y="54" width="8" height="6"/><rect x="84" y="58" width="6" height="6"/><rect x="36" y="72" width="6" height="6"/>
+                <rect x="48" y="76" width="8" height="6"/><rect x="62" y="70" width="6" height="6"/><rect x="76" y="76" width="8" height="6"/><rect x="88" y="82" width="6" height="6"/>
+              </svg>
+            </div>
+
+            <div class="space-y-1">
+              <div class="font-bold text-[13px] text-pistachio">999x VERIFIED CERTIFICATE</div>
+              <div class="font-mono text-[10.5px] text-lime font-bold">SCAN TO AUDIT AUTHENTICITY</div>
+              <div class="text-[10px] font-mono text-pistachio/50">Doc #CLI-999-042 • Valid 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- FINAL CONVERSION CTA (Legendary Depth)                                    -->
+<!-- ========================================================================= -->
+<section class="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-24 reveal">
+  <div class="rounded-3xl p-[1px] bg-gradient-to-r from-lime via-violet to-pistachio overflow-hidden shadow-[0_0_50px_rgba(163,230,53,0.22)]">
+    <div class="rounded-[23px] p-8 sm:p-10 bg-surface relative overflow-hidden">
+      <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-[70px] opacity-[0.12] bg-lime pointer-events-none"></div>
+      <div class="absolute -bottom-20 -right-20 w-72 h-72 rounded-full blur-[70px] opacity-[0.12] bg-violet pointer-events-none"></div>
+      <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="space-y-3 text-center lg:text-start max-w-[560px]">
+          <h2 class="font-display font-bold text-[26px] sm:text-[34px] leading-[1.3] text-pistachio" data-i18n="cta_title">
+            جاهز لتحويل فوضى التشغيل إلى نظام يُدار في 48 ساعة؟
+          </h2>
+          <p class="text-[14.5px] leading-7 text-pistachio/70 font-sub" data-i18n="cta_desc">
+            ابدأ بالفحص المجاني — تقرير Pulse + هيكل مقترح + حزمة رعاة أولية. بدون بطاقة. بدون مكالمة مبيعات مزعجة.
+          </p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-3 text-[11px] font-mono text-pistachio/60">
+            <span class="inline-flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="2"><path d="M5 12l5 5l10-10"/></svg> <span data-i18n="cta_feat_1">تشخيص فوري</span></span>
+            <span class="inline-flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="2"><path d="M5 12l5 5l10-10"/></svg> <span data-i18n="cta_feat_2">تسليم 48 ساعة</span></span>
+            <span class="inline-flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="2"><path d="M5 12l5 5l10-10"/></svg> <span data-i18n="cta_feat_3">عزل بيانات 100%</span></span>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-[420px] shrink-0">
+          <div class="rounded-2xl p-4 bg-canvas border border-white/10">
+            <label class="text-[12px] font-bold text-pistachio" data-i18n="cta_email_label">بريدك العملي</label>
+            <div class="mt-2 flex gap-2">
+              <input id="ctaEmailInput" type="email" placeholder="ops@team.com" dir="ltr" class="flex-1 h-11 rounded-xl px-3 bg-surface border border-white/15 text-pistachio text-[14px] outline-none focus:border-lime" />
+              <button id="ctaSubmitBtn" class="h-11 px-6 btn-lime text-[13px] font-bold whitespace-nowrap shrink-0">
+                <span data-i18n="cta_btn">ابدأ الآن</span>
+              </button>
+            </div>
+            <div class="mt-2.5 flex items-center gap-2 text-[11px] text-pistachio/45">
+              <input type="checkbox" checked class="accent-lime w-3 h-3 rounded">
+              <span data-i18n="cta_agree">أوافق على المعالجة وفق الخصوصية — تشفير AES-256</span>
+            </div>
+            <p id="ctaMsg" class="hidden mt-2 text-[12px]"></p>
+          </div>
+          <div class="mt-3 flex items-center justify-center lg:justify-start gap-3 text-[11px] font-mono text-pistachio/40">
+            <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> <span data-i18n="cta_activ">تفعيل 2.3 دقيقة</span></span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>AES-256 • HttpOnly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- FOOTER LEGEND                                                             -->
+<!-- ========================================================================= -->
+<footer class="relative z-10 border-t border-white/[0.06] bg-surface/30 backdrop-blur-md">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-10">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl overflow-hidden shrink-0">
+            <img src="logo_999x.jpg" alt="999x Logo" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="font-unbounded font-black text-pistachio text-[14px]">999x Operations Hub</div>
+            <div class="font-mono text-[10px] tracking-[0.16em] text-pistachio/40" data-i18n="footer_tagline">NEO-CYBER EXECUTIVE • CAIRO 2026</div>
+          </div>
+        </div>
+        <p class="text-[13px] leading-6 mt-3 max-w-[420px] text-pistachio/60 font-sub" data-i18n="footer_desc">منصة تشغيلية نخبوية للـ HR والـ PR والرعاة. نبني أنظمة، لا شرائح بوربوينت. كل مخرجاتنا قابلة للتنفيذ غداً صباحاً.</p>
+        <div class="mt-4 flex gap-2">
+          <a href="#" class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-pistachio/70 hover:text-lime hover:border-lime/30 transition">in</a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-pistachio/70 hover:text-lime transition">𝕏</a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-pistachio/70 hover:text-lime transition">◎</a>
+        </div>
+      </div>
+      <div class="col-span-6 sm:col-span-4 lg:col-span-2">
+        <div class="font-bold text-[13px] text-pistachio" data-i18n="footer_platform_title">المنصة</div>
+        <ul class="mt-3 space-y-2 text-[13px] text-pistachio/60">
+          <li><a href="#pulse" class="hover:text-pistachio transition" data-i18n="footer_platform_diag">التشخيص 360°</a></li>
+          <li><a href="#modules" class="hover:text-pistachio transition" data-i18n="footer_platform_hr">محرك HR</a></li>
+          <li><a href="#modules" class="hover:text-pistachio transition" data-i18n="footer_platform_sponsor">استوديو الرعاة</a></li>
+          <li><a href="#roadmap" class="hover:text-pistachio transition" data-i18n="footer_platform_roadmap">خارطة الطريق</a></li>
+        </ul>
+      </div>
+      <div class="col-span-6 sm:col-span-4 lg:col-span-2">
+        <div class="font-bold text-[13px] text-pistachio" data-i18n="footer_resources_title">الموارد</div>
+        <ul class="mt-3 space-y-2 text-[13px] text-pistachio/60">
+          <li><a href="#" class="hover:text-pistachio transition" data-i18n="footer_resources_docs">الوثائق</a></li>
+          <li><a href="#" class="hover:text-pistachio transition" data-i18n="footer_resources_security">أمان Multi-Tenant</a></li>
+          <li><a href="#" class="hover:text-pistachio transition">OpenRouter Gateway</a></li>
+          <li><a href="#" class="hover:text-pistachio transition" data-i18n="footer_resources_status">حالة النظام</a></li>
+        </ul>
+      </div>
+      <div class="col-span-12 sm:col-span-4 lg:col-span-3">
+        <div class="font-bold text-[13px] text-pistachio" data-i18n="footer_contact_title">تواصل عملياتي</div>
+        <div class="mt-3 rounded-xl p-3 bg-canvas border border-lime/20">
+          <div class="text-[11px] text-pistachio/50" data-i18n="footer_contact_whatsapp_label">واتساب العمليات</div>
+          <div class="font-mono font-bold text-pistachio" dir="ltr">+20 101 999 3801</div>
+          <div class="text-[11px] text-pistachio/40" data-i18n="footer_contact_whatsapp_sub">رد فوري • Webhook مباشر</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/[0.06] flex flex-wrap gap-3 justify-between items-center text-[11px] font-mono text-pistachio/40">
+      <span data-i18n="footer_copy">© 2026 999x Operations. صُنع بعناية فائقة في القاهرة.</span>
+      <span class="flex gap-4"><a href="#" class="hover:text-pistachio" data-i18n="footer_privacy">الخصوصية</a><a href="#" class="hover:text-pistachio" data-i18n="footer_terms">الشروط</a><a href="#" class="hover:text-pistachio" data-i18n="footer_security">الأمان</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================================= -->
+<!-- MODAL: CLIENT HUB SIMULATOR                                               -->
+<!-- ========================================================================= -->
+<div id="clientModal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style="background: rgba(10, 2, 16, 0.85); backdrop-filter: blur(16px);">
+  <div class="modal-content glass-panel rounded-3xl w-full max-w-[800px] p-7 sm:p-8 relative border-lime/30">
+    <button id="closeClientModalBtn" class="absolute top-5 left-5 w-9 h-9 rounded-xl bg-surface border border-white/10 text-pistachio flex items-center justify-center text-[16px] hover:bg-elevated transition">✕</button>
+
+    <div class="flex items-center gap-3.5 border-b border-white/[0.08] pb-5 mb-6">
+      <div class="w-10 h-10 rounded-xl overflow-hidden shrink-0">
+        <img src="logo_999x.jpg" alt="999x Logo" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-[18px] text-pistachio" data-i18n="modal_client_title">لوحة تحكم العميل الحية</h3>
+        <div class="text-[12px] font-mono text-pistachio/50">Enactus Cairo • ID #CLI-999-042</div>
+      </div>
+    </div>
+
+    <div class="space-y-5">
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="p-4 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-pistachio/50 font-mono text-[10.5px]" data-i18n="dial_health">HEALTH</div>
+          <div class="font-mono font-bold text-lime text-[22px] mt-0.5">88/100</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-pistachio/50 font-mono text-[10.5px]" data-i18n="modal_client_lead">OPS LEAD</div>
+          <div class="font-sub font-bold text-pistachio text-[14px] mt-1" data-i18n="modal_ops_name">سارة المنشاوي</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-canvas border border-white/10">
+          <div class="text-pistachio/50 font-mono text-[10.5px]" data-i18n="modal_client_status">STATUS</div>
+          <div class="font-sub font-bold text-emerald-400 text-[14px] mt-1" data-i18n="modal_approved_tag">معتمد ✓</div>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-canvas border border-lime/20 text-[13.5px] leading-relaxed font-sub">
+        <div class="font-bold text-pistachio mb-1.5" data-i18n="modal_doc_title">وثيقة خطة العمل (HR Action Plan v1.4)</div>
+        <p class="text-pistachio/80 text-[13px]" data-i18n="modal_doc_text">
+          تم اعتماد تقسيم اللجان إلى خلايا ثلاثية وتعيين قائد مسؤول عن الـ Onboarding لتقليل التسرب خلال الـ 6 أسابيع القادمة.
+        </p>
+      </div>
+
+      <button id="approvePlanBtn" class="w-full h-11 rounded-xl bg-lime text-canvas font-unbounded text-[13px] font-bold">
+        <span data-i18n="modal_btn_approve">✓ تم اعتماد ومزامنة الخطة</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- MODAL: FAST INTAKE WIZARD                                                 -->
+<!-- ========================================================================= -->
+<div id="wizardModal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style="background: rgba(10, 2, 16, 0.85); backdrop-filter: blur(16px);">
+  <div class="modal-content glass-panel rounded-3xl w-full max-w-[560px] p-7 sm:p-8 relative border-lime/30">
+    <button id="closeWizardModalBtn" class="absolute top-5 left-5 w-9 h-9 rounded-xl bg-surface border border-white/10 text-pistachio flex items-center justify-center text-[16px] hover:bg-elevated transition">✕</button>
+
+    <h3 class="font-display font-bold text-[20px] text-pistachio mb-4" data-i18n="wiz_title">
+      فحص سريع لمنظمتك
+    </h3>
+
+    <div class="space-y-4 font-sub">
+      <div>
+        <label class="text-[12.5px] font-bold text-pistachio block mb-1.5" data-i18n="wiz_org_name">اسم المنظمة أو الفريق:</label>
+        <input id="wizName" type="text" placeholder="e.g. Enactus Cairo" class="w-full h-11 rounded-xl px-3.5 bg-canvas border border-white/15 text-pistachio text-[13.5px] outline-none focus:border-lime" />
+      </div>
+      <div>
+        <label class="text-[12.5px] font-bold text-pistachio block mb-1.5" data-i18n="wiz_phone">رقم واتساب للتواصل السريع:</label>
+        <input id="wizPhone" type="tel" placeholder="+20 100 000 0000" dir="ltr" class="w-full h-11 rounded-xl px-3.5 bg-canvas border border-white/15 text-pistachio text-[13.5px] outline-none focus:border-lime" />
+      </div>
+      <button id="submitWizBtn" class="w-full h-12 btn-lime text-[13.5px] mt-2 font-unbounded">
+        <span data-i18n="wiz_btn_submit">توليد التقرير الأولي فوراً</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- TOAST NOTIFICATION CONTAINER                                              -->
+<!-- ========================================================================= -->
+<div id="toastNotification" class="fixed bottom-6 left-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+  <div class="rounded-2xl px-5 py-3 bg-surface border border-lime/40 text-pistachio text-[13px] font-mono flex items-center gap-3 shadow-2xl">
+    <span class="w-6 h-6 rounded-lg bg-lime/20 text-lime flex items-center justify-center font-bold">✓</span>
+    <span id="toastText" data-i18n="toast_default">تمت العملية بنجاح!</span>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SCRIPT: BILINGUAL ENGINE & INTERACTIVE LOGIC                              -->
+<!-- ========================================================================= -->
+<script>
+// -----------------------------------------------------------------------------
+// 1. Bilingual Dictionary (Arabic & English)
+// -----------------------------------------------------------------------------
+const i18n = {
+  ar: {
+    nav_diagnostic: "التشخيص اللحظي",
+    nav_modules: "المحركات الأربعة",
+    nav_roadmap: "خارطة الطريق",
+    nav_warroom: "غرفة العمليات",
+    btn_client_hub: "لوحة العميل",
+    btn_start_free: "ابدأ الفحص",
+    hero_badge: "منظومة معتمدة لـ 340+ فريق وشركة ناشئة",
+    hero_title_1: "تشغيل فائق الذكاء.",
+    hero_title_2: "موارد بشرية منضبطة.",
+    hero_title_3: "ووصول لا نهائي للرعاة.",
+    hero_desc: "نعيد هندسة الـ HR واستراتيجيات الرعاة في 48 ساعة — تشخيص دقيق بالذكاء الاصطناعي، هيكل RACI معتمد، وحزم رعاة جاهزة للإرسال مع مسودات بريد شخصية.",
+    hero_btn_calc: "ابدأ فحص منظمتك مجاناً",
+    hero_btn_demo: "معاينة لوحة العميل الحية",
+    trust_note: "متوسط إغلاق الرعاة: 11 يوماً",
+    hero_card_status: "999x CORE • LIVE",
+    dial_health: "صحة الفريق",
+    dial_churn: "التسرب",
+    dial_sponsors: "الرعاة",
+    hero_tier_banner: "باقة Gold — مطابقة Fintech",
+    pulse_tag: "PULSE 360° DIAGNOSTIC",
+    pulse_title: "فحص صحة المنظمة في 20 ثانية",
+    pulse_label_type: "1. نوع المنظمة:",
+    type_startup: "ستارتب",
+    type_volunteer: "تيم تطوعي",
+    type_event: "إيفينت",
+    pulse_label_pain: "2. المعضلة التشغيلية الأساسية:",
+    pain_churn: "تسرب الأعضاء بعد فترة قصيرة (High Churn Rate)",
+    pain_hierarchy: "فوضى المسؤوليات وتداخل الأدوار (No Clear RACI)",
+    pain_sponsor: "صعوبة إقناع الرعاة وإغلاق العقود (Low Sponsor Close)",
+    pain_delivery: "تأخر تسليم المهام والالتزامات (Delayed Tasks)",
+    pulse_label_size: "حجم الفريق:",
+    pulse_btn_calc: "تحديث المؤشرات فوراً",
+    tag_stable: "مستقر وجاهز للتوسع",
+    brief_label: "التوصية الفورية — AI Brief:",
+    brief_sample: "اعتمد هيكل RACI من 3 مستويات وحدد حزم الرعاة Gold/Silver قبل إطلاق الحملة الإعلامية لتفادي ضياع الوقت.",
+    btn_pdf: "تصدير تقرير PDF معتمد",
+    bento_tag: "SYSTEM ENGINES",
+    bento_title: "أربعة محركات ذكية — منظومة متكاملة",
+    eng_hr_title: "محرك إعادة هيكلة الـ HR",
+    eng_hr_desc: "هيكل تنظيمي شجري بمسؤوليات واضحة ومسار ترقية يقلل تسرب الأعضاء بنسبة 65%.",
+    eng_sponsor_title: "استوديو عروض الرعاة",
+    eng_sponsor_desc: "توليد حزم الرعاية ومطابقة القطاعات المستهدفة مع مسودات بريد شخصية.",
+    tier_gold: "الباقة الذهبية (Gold Tier)",
+    tier_gold_desc: "جناح رئيسي + كلمة افتتاحية",
+    tier_silver: "الباقة الفضية (Silver Tier)",
+    tier_silver_desc: "لوجو المطبوعات + بوستات",
+    btn_copy_email: "نسخ رسالة التواصل المولدّة",
+    eng_whatsapp_title: "بوابة الطوارئ عبر واتساب",
+    scen_speaker: "🚨 اعتذار متحدث",
+    scen_churn: "📉 انسحاب أعضاء",
+    scen_sponsor: "💰 تعديل باقة راعي",
+    eng_kanban_title: "لوحة المهام (Kanban)",
+    eng_kanban_desc: "تتبع زمني وربط كل مهمة بمخرجات العميل مباشرة دون تشتت.",
+    kanban_stat_tasks: "18 تاسك منجز هذا الأسبوع",
+    roadmap_title: "خارطة الطريق في 4 محطات",
+    roadmap_eta: "متوسط التنفيذ: 11 يوماً",
+    step_1_title: "التشخيص والتنظيف",
+    step_1_desc: "فحص Pulse 360° وتحديد الفجوات وإصدار التقرير الأولي.",
+    step_2_title: "الهيكلة وRACI",
+    step_2_desc: "بطاقات المهام، وأوصاف الأدوار، وبروتوكول الـ Onboarding.",
+    step_3_title: "حملة الرعاة",
+    step_3_desc: "تجهيز الـ Pitch Deck ومطابقة الرعاة وإيميلات التواصل.",
+    step_4_title: "المتابعة والاعتماد",
+    step_4_desc: "تقرير شهري مختوم بكود QR مشفر وضمان الجودة.",
+    cta_title: "جاهز لإنهاء فوضى التشغيل؟",
+    cta_desc: "احصل على تقريرك التشخيصي المجاني خلال دقيقتين. بدون بطاقة بنكية.",
+    cta_btn: "ابدأ فوراً",
+    modal_client_title: "لوحة تحكم العميل الحية",
+    modal_client_lead: "قائد العمليات",
+    modal_client_status: "الحالة",
+    modal_approved_tag: "معتمد ✓",
+    modal_doc_title: "وثيقة خطة العمل (HR Action Plan v1.4)",
+    modal_doc_text: "تم اعتماد تقسيم اللجان إلى خلايا ثلاثية وتعيين قائد مسؤول عن الـ Onboarding لتقليل التسرب خلال الـ 6 أسابيع القادمة.",
+    modal_btn_approve: "✓ تم اعتماد ومزامنة الخطة",
+    wiz_title: "فحص سريع لمنظمتك",
+    wiz_org_name: "اسم المنظمة أو الفريق:",
+    wiz_phone: "رقم واتساب للتواصل السريع:",
+    wiz_btn_submit: "توليد التقرير الأولي فوراً",
+    hero_kpi_label: "وقت الهيكلة",
+    hero_kpi_sub: "3 أسابيع → 48 ساعة",
+    hero_day: "يوم",
+    hero_no_card: "لا حاجة لبطاقة — التقرير التجريبي يُولّد أمامك في 90 ثانية",
+    hero_rating: " — تقييم 4.9/5 على 127 مشروع",
+    hero_tier_suffix: "• مولّدة الآن",
+    marquee_label: "يعمل مع",
+    marquee_response: "متوسط وقت الرد 8 دقائق",
+    pulse_desc: "اختر نوع فريقك ومعضلتك، ودع الخوارزمية تحسب مؤشر الصحة فوراً — بدون تسجيل. نفس محرك التشخيص داخل المنصة.",
+    bento_sub: "لا أدوات متناثرة. كل محرك يغذي الآخر: الهيكل يولّد الوصف الوظيفي، الوصف يغذي حزمة الرعاة، والخطة تتحول لتاسكات Kanban لحظياً.",
+    whatsapp_desc: "أرسل رسالة نصية أو صوتية؛ يقوم الذكاء الاصطناعي بتفريغها واقتراح خطة فورية.",
+    quote_main: "“كنا نضيع 3 أسابيع كل سيزون لإعادة هيكلة اللجان. مع 999x استلمنا هيكل RACI + وصف وظيفي + Onboarding Kit في <span class=\"text-lime font-bold\">يومين</span>، ونسبة التسرب نزلت من 41% إلى 12%.”",
+    quote_author: "— سارة المنشاوي، Head of Operations • Enactus Cairo • 47 عضو • 3 رعاة مغلقين في 9 أيام",
+    roadmap_dur_1: "2 أيام • تقرير أولي",
+    roadmap_dur_2: "3–5 أيام • Inline Review",
+    roadmap_dur_3: "5–7 أيام • جاهز للإرسال",
+    roadmap_dur_4: "مستمر • PDF مختوم",
+    cta_feat_1: "تشخيص فوري",
+    cta_feat_2: "تسليم 48 ساعة",
+    cta_feat_3: "عزل بيانات 100%",
+    cta_email_label: "بريدك العملي",
+    cta_agree: "أوافق على المعالجة وفق الخصوصية — تشفير AES-256",
+    cta_activ: "تفعيل 2.3 دقيقة",
+    footer_desc: "منصة تشغيلية نخبوية للـ HR والـ PR والرعاة. نبني أنظمة، لا شرائح بوربوينت. كل مخرجاتنا قابلة للتنفيذ غداً صباحاً.",
+    footer_platform_title: "المنصة",
+    footer_platform_diag: "التشخيص 360°",
+    footer_platform_hr: "محرك HR",
+    footer_platform_sponsor: "استوديو الرعاة",
+    footer_platform_roadmap: "خارطة الطريق",
+    footer_resources_title: "الموارد",
+    footer_resources_docs: "الوثائق",
+    footer_resources_security: "أمان Multi-Tenant",
+    footer_resources_status: "حالة النظام",
+    footer_contact_title: "تواصل عملياتي",
+    footer_contact_whatsapp_label: "واتساب العمليات",
+    footer_contact_whatsapp_sub: "رد فوري • Webhook مباشر",
+    footer_copy: "© 2026 999x Operations. صُنع بعناية فائقة في القاهرة.",
+    footer_privacy: "الخصوصية",
+    footer_terms: "الشروط",
+    footer_security: "الأمان",
+    dept_hr_default: "<strong>HR:</strong> متابعة التقييم الأسبوعي، ومسار الـ Onboarding للحد من التسرب، وقياس رضا الأعضاء.",
+    chat_user_speaker: "\"اعتذر المتحدث الرئيسي قبل المؤتمر بيومين!\"",
+    chat_bot_speaker: "\"حل مقترح: 3 متحدثين بدلاء من شبكة 999x تم التواصل معهم وتعديل جدول الجلسات فوراً.\"",
+    hero_desc_full: "نعيد هندسة الـ HR واستراتيجيات الرعاة في <span class=\"text-pistachio font-bold\">48 ساعة</span> — تشخيص دقيق بالذكاء الاصطناعي، هيكل RACI معتمد، وحزم رعاة جاهزة للإرسال مع مسودات بريد شخصية. بدون اجتماعات عبثية. بدون شيتات ضائعة.",
+    title: "999x Operations & Client Hub — منظومة التشغيل والذكاء المؤسسي | HR • PR • Sponsors",
+    meta_desc: "منصة 999x: تشغيل فائق الذكاء، موارد بشرية منضبطة، ووصول لا نهائي للرعاة. إعادة هندسة الموارد البشرية والعمليات في 48 ساعة للشركات الناشئة والتيمات التطوعية والفعاليات الكبرى.",
+    cta_placeholder: "ops@team.com",
+    radar_labels: ['الـ HR', 'الاستقرار', 'الرعاة', 'السرعة'],
+    toast_copied: "تم نسخ رسالة التواصل بنجاح!",
+    toast_calc: "تم تحديث مؤشرات المنظمة!",
+    toast_pdf: "جاري توليد ملف الـ PDF المشفر...",
+    toast_sent: "تم إرسال الرابط لبريدك الإلكتروني!",
+    hero_latency: 'زمن الاستجابة: 14ms',
+    hero_shield_label: 'الدرع التنفيذي — 14ms',
+    hero_streaming: 'بث مباشر 42 tok/s',
+    pulse_meta: 'بدون تسجيل • ذاكرة دلالية • 15ms',
+    roadmap_tag: 'خارطة الطريق',
+    raci_footer: 'RACI: مسؤول ومحاسب',
+    mongo_sync: 'متزامن مع MongoDB',
+    webhook_footer: 'Webhook مباشر إلى غرفة العمليات',
+    kanban_generated: 'تم توليد 72%',
+    kanban_model: 'النموذج: Minimax M3',
+    kanban_ontime: '100% في الوقت',
+    footer_tagline: 'NEO-CYBER EXECUTIVE • CAIRO 2026',
+    bento_pipeline: '4 محركات • خط إنتاج واحد • 48 ساعة',
+    modal_ops_name: 'سارة المنشاوي'
+  },
+  en: {
+    nav_diagnostic: "Diagnostic",
+    nav_modules: "Four Engines",
+    nav_roadmap: "Roadmap",
+    nav_warroom: "War Room",
+    btn_client_hub: "Client Hub",
+    btn_start_free: "Start Free",
+    hero_badge: "Trusted by 340+ Startups & Teams",
+    hero_title_1: "Autonomous Ops.",
+    hero_title_2: "Disciplined HR.",
+    hero_title_3: "Infinite Sponsors.",
+    hero_desc: "Re-engineer your HR & sponsor pipeline in 48 hours — instant AI diagnosis, verified RACI hierarchy, and ready-to-send pitch decks with cold emails.",
+    hero_btn_calc: "Start Free Org Diagnostic",
+    hero_btn_demo: "View Live Client Hub",
+    trust_note: "Avg Sponsor Close: 11 Days",
+    hero_card_status: "999x CORE • LIVE",
+    dial_health: "HEALTH",
+    dial_churn: "CHURN",
+    dial_sponsors: "SPONSORS",
+    hero_tier_banner: "Tier Gold — Fintech Match",
+    pulse_tag: "PULSE 360° DIAGNOSTIC",
+    pulse_title: "Diagnose Your Org in 20 Seconds",
+    pulse_label_type: "1. Organization Type:",
+    type_startup: "Startup",
+    type_volunteer: "Volunteer",
+    type_event: "Conference",
+    pulse_label_pain: "2. Primary Friction Point:",
+    pain_churn: "High Member Churn Rate",
+    pain_hierarchy: "Fuzzy Hierarchy & No RACI",
+    pain_sponsor: "Struggling to Close Sponsors",
+    pain_delivery: "Delayed Tasks & Deadlines",
+    pulse_label_size: "Team Size:",
+    pulse_btn_calc: "Recalculate Metrics",
+    tag_stable: "Stable & Ready to Scale",
+    brief_label: "Instant Directive — AI Brief:",
+    brief_sample: "Adopt a 3-tier RACI matrix and package Gold/Silver tiers before outreach to close sponsors within 10 days.",
+    btn_pdf: "Export Verified PDF",
+    bento_tag: "SYSTEM ENGINES",
+    bento_title: "Four Intelligent Engines — Full Synergy",
+    eng_hr_title: "HR Restructuring Engine",
+    eng_hr_desc: "RACI tree hierarchy with clear role cards and career ladders that cuts member churn by 65%.",
+    eng_sponsor_title: "Sponsorship Pitch Studio",
+    eng_sponsor_desc: "Generate tailored sponsor tiers and personalized cold outreach emails.",
+    tier_gold: "Gold Tier Package",
+    tier_gold_desc: "Keynote speaking + Main booth",
+    tier_silver: "Silver Tier Package",
+    tier_silver_desc: "Print branding + Social posts",
+    btn_copy_email: "Copy Generated Outreach Pitch",
+    eng_whatsapp_title: "WhatsApp Emergency Webhook",
+    scen_speaker: "🚨 Speaker Dropped",
+    scen_churn: "📉 5 Members Left",
+    scen_sponsor: "💰 Sponsor Tier Edit",
+    eng_kanban_title: "Ops Kanban Matrix",
+    eng_kanban_desc: "Real-time task tracking with instant linkage to client deliverables.",
+    kanban_stat_tasks: "18 Deliverables Done This Week",
+    roadmap_title: "Operational Roadmap in 4 Stations",
+    roadmap_eta: "Avg Timeline: 11 Days",
+    step_1_title: "Diagnosis & Cleaning",
+    step_1_desc: "Pulse 360° scan, bottleneck audit and initial diagnostic brief.",
+    step_2_title: "RACI & Structure",
+    step_2_desc: "Role descriptions, onboarding kits, and team pods.",
+    step_3_title: "Sponsor Campaign",
+    step_3_desc: "Pitch deck generation and targeted outreach campaigns.",
+    step_4_title: "Review & Sign-Off",
+    step_4_desc: "Monthly stamped PDF with cryptographic QR seal.",
+    cta_title: "Ready to Eliminate Ops Chaos?",
+    cta_desc: "Get your free diagnostic brief in 2 minutes. No credit card required.",
+    cta_btn: "Start Now",
+    modal_client_title: "Live Client Command Hub",
+    modal_client_lead: "OPS LEAD",
+    modal_client_status: "STATUS",
+    modal_approved_tag: "Approved ✓",
+    modal_doc_title: "Deliverable: HR Action Plan v1.4",
+    modal_doc_text: "Three-tier committee pods approved with an onboarding lead assigned to cut churn over the next 6 weeks.",
+    modal_btn_approve: "✓ Plan Verified & Synced",
+    wiz_title: "Quick Diagnostic Wizard",
+    wiz_org_name: "Organization or Team Name:",
+    wiz_phone: "WhatsApp Contact Number:",
+    wiz_btn_submit: "Generate Initial Brief",
+    hero_kpi_label: "Setup Time",
+    hero_kpi_sub: "3 weeks → 48 hours",
+    hero_day: "days",
+    hero_no_card: "No card needed — pilot report generated in 90 seconds",
+    hero_rating: " — Rated 4.9/5 across 127 projects",
+    hero_tier_suffix: "• Generated Now",
+    marquee_label: "Trusted by",
+    marquee_response: "Avg response 8 minutes",
+    pulse_desc: "Pick your team type & friction — let the engine score health instantly. No signup. Same diagnostic engine.",
+    bento_sub: "No scattered tools. Each engine feeds the next: structure generates JDs, JDs feed sponsor packs, plans become Kanban tasks.",
+    whatsapp_desc: "Send a text or voice note — AI transcribes and proposes an instant plan.",
+    quote_main: "“We used to waste 3 weeks each season restructuring committees. With 999x we received a RACI structure + JDs + Onboarding Kit in <span class=\"text-lime font-bold\">2 days</span>, and churn dropped from 41% to 12%.”",
+    quote_author: "— Sara El-Manshawy, Head of Operations • Enactus Cairo • 47 members • 3 sponsors closed in 9 days",
+    roadmap_dur_1: "2 days • Initial report",
+    roadmap_dur_2: "3–5 days • Inline Review",
+    roadmap_dur_3: "5–7 days • Ready to send",
+    roadmap_dur_4: "Ongoing • Stamped PDF",
+    cta_feat_1: "Instant diagnosis",
+    cta_feat_2: "48h delivery",
+    cta_feat_3: "100% data isolation",
+    cta_email_label: "Work email",
+    cta_agree: "I agree to processing per Privacy — AES-256 encrypted",
+    cta_activ: "Activation 2.3 min",
+    footer_desc: "Elite operations platform for HR, PR & Sponsors. We build systems, not slides. Every deliverable is executable tomorrow morning.",
+    footer_platform_title: "Platform",
+    footer_platform_diag: "360° Diagnostic",
+    footer_platform_hr: "HR Engine",
+    footer_platform_sponsor: "Sponsor Studio",
+    footer_platform_roadmap: "Roadmap",
+    footer_resources_title: "Resources",
+    footer_resources_docs: "Docs",
+    footer_resources_security: "Multi-Tenant Security",
+    footer_resources_status: "System Status",
+    footer_contact_title: "Ops Contact",
+    footer_contact_whatsapp_label: "Ops WhatsApp",
+    footer_contact_whatsapp_sub: "Instant reply • Direct Webhook",
+    footer_copy: "© 2026 999x Operations. Crafted with precision in Cairo.",
+    footer_privacy: "Privacy",
+    footer_terms: "Terms",
+    footer_security: "Security",
+    dept_hr_default: "<strong>HR:</strong> Weekly reviews, onboarding tracking, and retention strategies.",
+    chat_user_speaker: "\"Keynote speaker cancelled 48h before the event!\"",
+    chat_bot_speaker: "\"Plan activated: 3 keynote replacements contacted from 999x network & schedule updated.\"",
+    hero_desc_full: "We re-engineer HR & sponsor strategies in <span class=\"text-pistachio font-bold\">48 hours</span> — precise AI diagnosis, verified RACI structure, and ready-to-send sponsor packs with personalized outreach. No pointless meetings. No lost sheets.",
+    title: "999x Operations & Client Hub — Intelligent Operations System | HR • PR • Sponsors",
+    meta_desc: "999x platform: Autonomous ops, disciplined HR, infinite sponsors. Re-engineer HR & operations in 48h for startups, volunteer teams & major events.",
+    cta_placeholder: "ops@team.com",
+    radar_labels: ['HR', 'Stability', 'Sponsors', 'Velocity'],
+    toast_copied: "Outreach pitch copied to clipboard!",
+    toast_calc: "Org metrics recalculated instantly!",
+    toast_pdf: "Generating verified PDF report...",
+    toast_sent: "Instant access link sent to your email!",
+    hero_latency: 'LATENCY: 14ms',
+    hero_shield_label: 'EXECUTIVE SHIELD — 14ms',
+    hero_streaming: 'Streaming 42 tok/s',
+    pulse_meta: 'No signup • Semantic Cache • 15ms',
+    roadmap_tag: 'ROADMAP TIMELINE',
+    raci_footer: 'RACI: Accountable & Responsible',
+    mongo_sync: 'Synced with MongoDB',
+    webhook_footer: 'Webhook Direct → Ops War Room',
+    kanban_generated: '72% Generated',
+    kanban_model: 'Model: Minimax M3',
+    kanban_ontime: '100% On-Time',
+    footer_tagline: 'NEO-CYBER EXECUTIVE • CAIRO 2026',
+    bento_pipeline: '4 Engines • 1 Pipeline • 48h',
+    modal_ops_name: 'Sara El-Manshawy'
+  }
+};
+
+let currentLang = 'ar';
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  const arBtn = document.getElementById('langArBtn');
+  const enBtn = document.getElementById('langEnBtn');
+  if (lang === 'ar') {
+    arBtn.className = 'px-3 py-1 rounded-lg font-bold transition bg-lime text-canvas';
+    enBtn.className = 'px-3 py-1 rounded-lg font-bold transition text-pistachio/60 hover:text-pistachio';
+  } else {
+    enBtn.className = 'px-3 py-1 rounded-lg font-bold transition bg-lime text-canvas';
+    arBtn.className = 'px-3 py-1 rounded-lg font-bold transition text-pistachio/60 hover:text-pistachio';
+  }
+
+  // title & meta
+  if (i18n[lang].title) {
+    const ti = document.getElementById('pageTitle');
+    if (ti) ti.textContent = i18n[lang].title;
+    document.title = i18n[lang].title;
+  }
+  if (i18n[lang].meta_desc) {
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', i18n[lang].meta_desc);
+  }
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = i18n[lang][key];
+    if (val !== undefined) {
+      // use innerHTML if translation contains HTML tags to preserve styling (e.g., 48 ساعة bold, quote highlight)
+      if (/<[^>]+>/.test(val)) el.innerHTML = val;
+      else el.textContent = val;
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-opt');
+    if (i18n[lang][key]) {
+      el.textContent = i18n[lang][key];
+    }
+  });
+
+  // placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (i18n[lang][key]) el.placeholder = i18n[lang][key];
+  });
+
+  // update dynamic UI that depends on language
+  try {
+    const sz = document.getElementById('teamSizeRange');
+    const szVal = document.getElementById('teamSizeVal');
+    if (sz && szVal) {
+      const v = sz.value;
+      szVal.textContent = lang === 'ar' ? `${v} فرداً` : `${v} Members`;
+    }
+  } catch(e){}
+
+  // dept insight
+  try {
+    const activeDept = document.querySelector('.dept-btn.active');
+    if (activeDept) {
+      const d = activeDept.dataset.dept;
+      const box = document.getElementById('deptInsightBox');
+      if (box && window.deptData && window.deptData[d]) {
+        const htmlVal = window.deptData[d][lang];
+        if (htmlVal) box.innerHTML = htmlVal;
+      }
+    }
+  } catch(e){}
+
+  // chat scenario
+  try {
+    const activeSc = document.querySelector('.emergency-scenario-btn.active');
+    if (activeSc && window.scenarios) {
+      const sc = activeSc.dataset.scenario;
+      const u = document.getElementById('chatUserMsg');
+      const b = document.getElementById('chatBotMsg');
+      if (u && window.scenarios[sc]) u.textContent = window.scenarios[sc].user[lang];
+      if (b && window.scenarios[sc]) b.textContent = window.scenarios[sc].bot[lang];
+    }
+  } catch(e){}
+
+  // hero desc full is inside paragraph with inner span - already handled via innerHTML above
+  // ensure canvas labels redraw
+  if (typeof computePulse === 'function') computePulse();
+  if (typeof drawRadar === 'function') {
+    // drawRadar will be called inside computePulse
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 2. Toast Notifications
+// -----------------------------------------------------------------------------
+function showToast(msgKey) {
+  const toast = document.getElementById('toastNotification');
+  const text = document.getElementById('toastText');
+  text.textContent = i18n[currentLang][msgKey] || msgKey;
+  toast.classList.remove('translate-y-20', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  setTimeout(() => {
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }, 2800);
+}
+
+// -----------------------------------------------------------------------------
+// 3. Spider Radar Canvas
+// -----------------------------------------------------------------------------
+const rCanvas = document.getElementById('spiderRadarCanvas');
+const rCtx = rCanvas.getContext('2d');
+
+function drawRadar(hr, churn, sponsor, exec) {
+  const dpr = window.devicePixelRatio || 1;
+  const size = 240;
+  rCanvas.width = size * dpr;
+  rCanvas.height = size * dpr;
+  rCtx.scale(dpr, dpr);
+
+  const cx = size / 2;
+  const cy = size / 2;
+  const radius = 80;
+  rCtx.clearRect(0, 0, size, size);
+
+  const stability = Math.max(15, 100 - churn);
+  const values = [hr / 100, stability / 100, sponsor / 100, exec / 100];
+  const labels = i18n[currentLang].radar_labels;
+
+  // Grid
+  for (let ring = 1; ring <= 4; ring++) {
+    const r = radius * (ring / 4);
+    rCtx.beginPath();
+    for (let i = 0; i < 4; i++) {
+      const ang = -Math.PI / 2 + (i * Math.PI) / 2;
+      const x = cx + Math.cos(ang) * r;
+      const y = cy + Math.sin(ang) * r;
+      if (i === 0) rCtx.moveTo(x, y); else rCtx.lineTo(x, y);
+    }
+    rCtx.closePath();
+    rCtx.strokeStyle = ring === 4 ? 'rgba(163, 230, 53, 0.35)' : 'rgba(243, 248, 204, 0.08)';
+    rCtx.stroke();
+  }
+
+  // Axes
+  for (let i = 0; i < 4; i++) {
+    const ang = -Math.PI / 2 + (i * Math.PI) / 2;
+    rCtx.beginPath();
+    rCtx.moveTo(cx, cy);
+    rCtx.lineTo(cx + Math.cos(ang) * radius, cy + Math.sin(ang) * radius);
+    rCtx.strokeStyle = 'rgba(243, 248, 204, 0.14)';
+    rCtx.stroke();
+  }
+
+  // Polygon
+  rCtx.beginPath();
+  for (let i = 0; i < 4; i++) {
+    const ang = -Math.PI / 2 + (i * Math.PI) / 2;
+    const r = radius * values[i];
+    const x = cx + Math.cos(ang) * r;
+    const y = cy + Math.sin(ang) * r;
+    if (i === 0) rCtx.moveTo(x, y); else rCtx.lineTo(x, y);
+  }
+  rCtx.closePath();
+  rCtx.fillStyle = 'rgba(163, 230, 53, 0.22)';
+  rCtx.fill();
+  rCtx.strokeStyle = '#A3E635';
+  rCtx.lineWidth = 2.2;
+  rCtx.stroke();
+
+  // Vertices
+  for (let i = 0; i < 4; i++) {
+    const ang = -Math.PI / 2 + (i * Math.PI) / 2;
+    const r = radius * values[i];
+    const x = cx + Math.cos(ang) * r;
+    const y = cy + Math.sin(ang) * r;
+    rCtx.beginPath();
+    rCtx.arc(x, y, 4, 0, Math.PI * 2);
+    rCtx.fillStyle = '#A3E635';
+    rCtx.fill();
+  }
+
+  // Labels
+  rCtx.font = '600 11px "JetBrains Mono", monospace';
+  rCtx.fillStyle = 'rgba(243, 248, 204, 0.85)';
+  rCtx.textAlign = 'center';
+
+  const coords = [
+    [cx, cy - radius - 12],
+    [cx + radius + 22, cy + 4],
+    [cx, cy + radius + 16],
+    [cx - radius - 24, cy + 4],
+  ];
+  labels.forEach((lbl, idx) => {
+    const [lx, ly] = coords[idx];
+    rCtx.fillText(lbl, lx, ly);
+  });
+}
+
+// -----------------------------------------------------------------------------
+// 4. Pulse 360° Logic
+// -----------------------------------------------------------------------------
+let currentType = 'STARTUP';
+
+document.querySelectorAll('.team-opt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.team-opt-btn').forEach(b => {
+      b.className = 'team-opt-btn p-3 rounded-xl border border-white/10 bg-canvas text-pistachio text-center text-[12.5px] transition hover:border-lime/40';
+    });
+    btn.className = 'team-opt-btn active p-3 rounded-xl border border-lime bg-lime text-canvas text-center font-bold text-[12.5px] transition';
+    currentType = btn.dataset.type;
+    computePulse();
+  });
+});
+
+const sizeSlider = document.getElementById('teamSizeRange');
+const sizeLabel = document.getElementById('teamSizeVal');
+sizeSlider.addEventListener('input', (e) => {
+  const val = e.target.value;
+  sizeLabel.textContent = currentLang === 'ar' ? `${val} فرداً` : `${val} Members`;
+  computePulse();
+});
+
+function computePulse() {
+  const p = document.getElementById('diagPain1').value;
+  let hr = 75, churn = 22, sponsor = 65, exec = 70;
+
+  if (currentType === 'STARTUP') { sponsor += 10; exec += 5; hr -= 5; }
+  else if (currentType === 'VOLUNTEER') { churn += 14; hr -= 12; sponsor -= 8; }
+  else if (currentType === 'EVENT') { sponsor += 12; exec += 8; hr -= 4; }
+
+  const painMap = {
+    churn: { hr: -15, churn: +18, sponsor: -4, exec: -8 },
+    hierarchy: { hr: -18, churn: +10, sponsor: -6, exec: -14 },
+    sponsor: { hr: -2, churn: +2, sponsor: -20, exec: -4 },
+    delivery: { hr: -6, churn: +6, sponsor: -4, exec: -18 },
+  };
+
+  if (painMap[p]) {
+    hr += painMap[p].hr;
+    churn += painMap[p].churn;
+    sponsor += painMap[p].sponsor;
+    exec += painMap[p].exec;
+  }
+
+  hr = Math.max(25, Math.min(95, hr));
+  churn = Math.max(10, Math.min(75, churn));
+  sponsor = Math.max(25, Math.min(95, sponsor));
+  exec = Math.max(30, Math.min(95, exec));
+
+  const total = Math.round(hr * 0.35 + (100 - churn) * 0.3 + sponsor * 0.2 + exec * 0.15);
+  document.getElementById('diagHealthScore').textContent = total;
+
+  drawRadar(hr, churn, sponsor, exec);
+}
+
+document.getElementById('recalcDiagBtn').addEventListener('click', () => {
+  computePulse();
+  showToast('toast_calc');
+});
+document.getElementById('diagPain1').addEventListener('change', computePulse);
+
+// -----------------------------------------------------------------------------
+// 5. Bento Grid Interactions
+// -----------------------------------------------------------------------------
+const deptData = {
+  hr: { ar: "<strong>HR:</strong> متابعة التقييم الأسبوعي، ومسار الـ Onboarding للحد من التسرب، وقياس رضا الأعضاء.", en: "<strong>HR:</strong> Weekly reviews, onboarding tracking, and retention strategies." },
+  ops: { ar: "<strong>OPS:</strong> إدارة بورد الـ Sprints والمهام اليومية وتفادي الاختناقات التشغيلية.", en: "<strong>OPS:</strong> Managing sprints, daily unblocking & delivery velocity." },
+  pr: { ar: "<strong>PR:</strong> صياغة البيانات الصحفية والتغطية الإعلامية واستقطاب المتحدثين الرسميين.", en: "<strong>PR:</strong> Press releases, media coverage & keynote speaker outreach." },
+  sponsors: { ar: "<strong>Sponsors:</strong> مطابقة القطاعات المستهدفة ومتابعة حزم الرعاية وإغلاق العقود.", en: "<strong>Sponsors:</strong> Matching target industries & closing tier sponsorships." },
+};
+window.deptData = deptData;
+
+document.querySelectorAll('.dept-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.dept-btn').forEach(b => {
+      b.className = 'dept-btn p-3 rounded-2xl bg-canvas border border-white/10 text-center transition hover:scale-105';
+      b.querySelector('div:last-child').className = 'text-[10px] text-pistachio/50 font-mono';
+    });
+    btn.className = 'dept-btn active p-3 rounded-2xl bg-elevated border border-lime/40 text-center transition hover:scale-105';
+    btn.querySelector('div:last-child').className = 'text-[10px] text-lime font-mono';
+    
+    const d = btn.dataset.dept;
+    document.getElementById('deptInsightBox').innerHTML = deptData[d][currentLang];
+  });
+});
+
+// Copy Sponsor Email
+document.getElementById('copySponsorEmailBtn').addEventListener('click', () => {
+  const text = currentLang === 'ar' 
+    ? 'يسرنا في 999x دعوة شركتكم كراعٍ ذهبي. تجدون بالملف المقابل الترويجي والجناح المخصص.' 
+    : 'We are pleased to invite your company as a Gold Sponsor for 999x. Attached are the marketing deliverables and keynote slot.';
+  navigator.clipboard.writeText(text);
+  showToast('toast_copied');
+});
+
+// WhatsApp Scenario Simulator
+const scenarios = {
+  speaker: {
+    user: { ar: '"اعتذر المتحدث الرئيسي قبل المؤتمر بيومين!"', en: '"Keynote speaker cancelled 48h before the event!"' },
+    bot: { ar: '"حل مقترح: 3 بدلاء من شبكة 999x تم التواصل معهم وتعديل جدول الجلسات فوراً."', en: '"Plan activated: 3 keynote replacements contacted from 999x network & PR schedule updated."' }
+  },
+  churn: {
+    user: { ar: '"انسحب 5 أعضاء من فريق التنظيم فجأة!"', en: '"5 organizing members dropped unexpectedly!"' },
+    bot: { ar: '"إجراء فوري: دمج لجان الاستقبال مع الدعم وإعادة توزيع المهام عبر Kanban."', en: '"Immediate fix: Merging reception with logistics pod & reallocating via Kanban."' }
+  },
+  sponsor: {
+    user: { ar: '"الراعي يطلب تعديل بنود الباقة قبل التوقيع."', en: '"Sponsor requesting custom deliverables before sign-off."' },
+    bot: { ar: '"إجراء فوري: إضافة مقابلة حصرية في البودكاست مع الحفاظ على سعر الباقة الأصلية."', en: '"Immediate fix: Add exclusive podcast interview without discounting package fee."' }
+  }
+};
+window.scenarios = scenarios;
+
+document.querySelectorAll('.emergency-scenario-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.emergency-scenario-btn').forEach(b => {
+      b.className = 'emergency-scenario-btn px-3 py-1.5 rounded-xl text-[12px] font-bold bg-canvas border border-white/10 text-pistachio transition hover:border-lime/40';
+    });
+    btn.className = 'emergency-scenario-btn active px-3 py-1.5 rounded-xl text-[12px] font-bold bg-lime text-canvas transition';
+    
+    const sc = btn.dataset.scenario;
+    document.getElementById('chatUserMsg').textContent = scenarios[sc].user[currentLang];
+    document.getElementById('chatBotMsg').textContent = scenarios[sc].bot[currentLang];
+  });
+});
+
+// PDF download button
+document.getElementById('downloadSampleReportBtn').addEventListener('click', () => {
+  showToast('toast_pdf');
+});
+
+// -----------------------------------------------------------------------------
+// 6. Modals (Client Hub & Fast Wizard)
+// -----------------------------------------------------------------------------
+const clientModal = document.getElementById('clientModal');
+const wizardModal = document.getElementById('wizardModal');
+
+document.getElementById('openClientModalBtn').addEventListener('click', () => clientModal.classList.add('active'));
+document.getElementById('heroDemoBtn').addEventListener('click', () => clientModal.classList.add('active'));
+document.getElementById('closeClientModalBtn').addEventListener('click', () => clientModal.classList.remove('active'));
+
+document.getElementById('openWizardBtn').addEventListener('click', () => wizardModal.classList.add('active'));
+document.getElementById('heroStartBtn').addEventListener('click', () => wizardModal.classList.add('active'));
+document.getElementById('closeWizardModalBtn').addEventListener('click', () => wizardModal.classList.remove('active'));
+
+document.getElementById('submitWizBtn').addEventListener('click', async () => {
+  const nameEl = document.getElementById('wizName');
+  const phoneEl = document.getElementById('wizPhone');
+  const name = nameEl ? nameEl.value.trim() : '';
+  const phone = phoneEl ? phoneEl.value.trim() : '';
+  if (name && name.length < 2) { showToast(currentLang==='ar' ? 'أدخل اسم المنظمة (حرفين على الأقل)' : 'Enter org name (2+ chars)'); return; }
+  // Try real API — if Astro site is running, redirect to onboarding/dashboard
+  const payload = { organizationName: name || 'Demo Team', category: 'STARTUP', primaryContact: { name, email: `${name.replace(/\s+/g,'').toLowerCase()||'demo'}@team.com`, phone: phone || '+201000000000' } };
+  try {
+    const apiUrl = (window.PUBLIC_API_URL || 'http://localhost:3001') + '/api/clients/register';
+    const res = await fetch(apiUrl, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if (res.ok) {
+      const j = await res.json();
+      showToast('toast_sent');
+      setTimeout(()=> { wizardModal.classList.remove('active'); window.location.href = '/client/dashboard?id=' + (j.data?.id||''); }, 600);
+      return;
+    }
+  } catch(e){ /* fallback to modal demo */ }
+  wizardModal.classList.remove('active');
+  setTimeout(() => clientModal.classList.add('active'), 250);
+  showToast('toast_sent');
+});
+
+document.getElementById('approvePlanBtn').addEventListener('click', () => {
+  showToast('modal_approved_tag');
+});
+
+document.getElementById('ctaSubmitBtn').addEventListener('click', () => {
+  const email = document.getElementById('ctaEmailInput').value.trim();
+  const msg = document.getElementById('ctaMsg');
+  if (email && email.includes('@')) {
+    showToast('toast_sent');
+    document.getElementById('ctaEmailInput').value = '';
+    if(msg){ msg.textContent = currentLang==='ar' ? 'تم ✓ — رابط الفحص أُرسل إلى '+email+' (تحقق من Spam)' : 'Sent ✓ — check '+email; msg.className='mt-2 text-[12px] text-lime'; msg.classList.remove('hidden'); }
+  } else {
+    if(msg){ msg.textContent = currentLang==='ar' ? 'أدخل بريداً عملياً صحيحاً — مثال: ops@enactus-cairo.org' : 'Enter a valid work email'; msg.className='mt-2 text-[12px] text-amber-300'; msg.classList.remove('hidden'); }
+    showToast(currentLang === 'ar' ? 'يرجى إدخال بريد صحيح' : 'Please enter a valid email');
+  }
+});
+
+// Legendary enhancements: scroll progress, spotlight, reveal, tilt
+const progress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const p = h>0 ? (window.scrollY / h * 100) : 0;
+  if(progress) progress.style.width = p + '%';
+  const header = document.querySelector('header');
+  if(header){
+    if(window.scrollY>12){ header.style.background='rgba(21,3,32,0.92)'; header.style.boxShadow='0 8px 30px rgba(0,0,0,0.35)'; }
+    else { header.style.background='rgba(21,3,32,0.85)'; header.style.boxShadow='none'; }
+  }
+}, {passive:true});
+
+const spotlight = document.getElementById('cursorSpotlight');
+let mx=0, my=0, raf;
+window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; if(!raf){ raf=requestAnimationFrame(()=>{ if(spotlight){ spotlight.style.left=mx+'px'; spotlight.style.top=my+'px'; spotlight.style.opacity='1'; } raf=null; }); }});
+window.addEventListener('mouseleave', ()=>{ if(spotlight) spotlight.style.opacity='0'; });
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+// Hero tilt 3D
+const heroTilt = document.getElementById('heroTilt');
+if(heroTilt){
+  heroTilt.addEventListener('mousemove', e=>{
+    const r=heroTilt.getBoundingClientRect();
+    const x=(e.clientX - r.left)/r.width -0.5;
+    const y=(e.clientY - r.top)/r.height -0.5;
+    heroTilt.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateZ(0)`;
+  });
+  heroTilt.addEventListener('mouseleave', ()=> heroTilt.style.transform='perspective(900px) rotateY(0) rotateX(0)');
+}
+
+// Bento spotlight local
+document.querySelectorAll('.bento-card').forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const rect=card.getBoundingClientRect();
+    const x=e.clientX-rect.left, y=e.clientY-rect.top;
+    card.style.background=`radial-gradient(600px circle at ${x}px ${y}px, rgba(163,230,53,0.06), transparent 40%), linear-gradient(145deg, rgba(48,10,72,0.65) 0%, rgba(34,6,51,0.85) 100%)`;
+  });
+  card.addEventListener('mouseleave', ()=> card.style.background='');
+});
+
+// typewriter for brief
+let typeTimer=null;
+function typeBrief(text){
+  const el=document.getElementById('diagBriefText');
+  const dots=document.getElementById('typingDots');
+  if(!el) return;
+  if(typeTimer) clearInterval(typeTimer);
+  if(dots) dots.style.opacity='1';
+  el.textContent='';
+  let i=0;
+  typeTimer=setInterval(()=>{
+    el.textContent=text.slice(0, ++i);
+    if(i>=text.length){ clearInterval(typeTimer); if(dots) dots.style.opacity='0'; }
+  }, 14);
+}
+
+// patch computePulse to include bars + typewriter + health animation
+const _origCompute = computePulse;
+computePulse = function(){
+  const p = document.getElementById('diagPain1').value;
+  let hr = 75, churn = 22, sponsor = 65, exec = 70;
+  if (currentType === 'STARTUP') { sponsor += 10; exec += 5; hr -= 5; }
+  else if (currentType === 'VOLUNTEER') { churn += 14; hr -= 12; sponsor -= 8; }
+  else if (currentType === 'EVENT') { sponsor += 12; exec += 8; hr -= 4; }
+  const painMap = { churn: { hr: -15, churn: +18, sponsor: -4, exec: -8 }, hierarchy: { hr: -18, churn: +10, sponsor: -6, exec: -14 }, sponsor: { hr: -2, churn: +2, sponsor: -20, exec: -4 }, delivery: { hr: -6, churn: +6, sponsor: -4, exec: -18 }, };
+  if (painMap[p]) { hr += painMap[p].hr; churn += painMap[p].churn; sponsor += painMap[p].sponsor; exec += painMap[p].exec; }
+  // team size impact
+  const sz = parseInt(document.getElementById('teamSizeRange')?.value||25,10);
+  if(sz>60){ hr-=4; churn+=6; exec-=4; }
+  if(sz<15){ hr+=4; exec+=3; }
+  hr = Math.max(25, Math.min(95, hr));
+  churn = Math.max(10, Math.min(75, churn));
+  sponsor = Math.max(25, Math.min(95, sponsor));
+  exec = Math.max(30, Math.min(95, exec));
+  const total = Math.round(hr * 0.35 + (100 - churn) * 0.3 + sponsor * 0.2 + exec * 0.15);
+  // animate health
+  const healthEl=document.getElementById('diagHealthScore');
+  if(healthEl){
+    const start=parseInt(healthEl.textContent||'0',10); const end=total; const dur=480; let st=null;
+    const step=(ts)=>{ if(!st) st=ts; const pr=Math.min((ts-st)/dur,1); const eased=1-Math.pow(1-pr,3); healthEl.textContent=Math.round(start+(end-start)*eased); if(pr<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+  // bars
+  const set = (id, val)=>{ const e=document.getElementById(id); if(e) e.textContent=val+'%'; };
+  const setBar=(id,val)=>{ const e=document.getElementById(id); if(e) e.style.width=val+'%'; };
+  set('mHr', hr); setBar('mHrBar', hr);
+  set('mChurn', churn); setBar('mChurnBar', churn);
+  set('mSponsor', sponsor); setBar('mSponsorBar', sponsor);
+  set('mExec', exec); setBar('mExecBar', exec);
+  drawRadar(hr, churn, sponsor, exec);
+  // brief
+  const briefs = currentLang==='ar' ? {
+    churn: `الفريق يعاني نزف أعضاء (Churn ${churn}%) بسبب ضعف Onboarding. ثبّت بودي سيستم + مسار ترحيب 3 خطوات خلال 10 أيام لخفض التسرب إلى 12%.`,
+    hierarchy:`فوضى RACI تخفض السرعة إلى ${exec}%. اعتمد هيكل 3 مستويات بمسؤول واحد لكل تاسك + Standup يومي 10 دقائق.`,
+    sponsor:`جاذبية الرعاة ${sponsor}% — تحتاج Tiering أوضح. أطلق Gold/Silver/Bronze مع مقابل محدد (لوجو، كلمة، جناح) ورسائل Fintech جاهزة.`,
+    delivery:`التنفيذ ${exec}% — التاسكات بلا Deadlines واضحة. فعّل Kanban بحد WIP=3 وDeadline صريح لكل كارت.`
+  } : {
+    churn:`Churn at ${churn}% — weak onboarding. Install 3-step welcome + buddy system to drop to 12% in 10 days.`,
+    hierarchy:`RACI chaos drags velocity to ${exec}%. Adopt 3-tier RACI + 10-min daily standups.`,
+    sponsor:`Sponsor appeal ${sponsor}% — unclear tiers. Ship Gold/Silver/Bronze with concrete deliverables.`,
+    delivery:`Velocity ${exec}% — tasks lack deadlines. Enforce WIP=3 Kanban + hard due dates.`
+  };
+  typeBrief(briefs[p] || briefs['hierarchy']);
+  // tag color
+  const tag=document.getElementById('diagHealthTag');
+  if(tag){
+    let txt='', bg='', col='';
+    if(total>=82){ txt=currentLang==='ar'?'ممتاز — جاهز للتوسع':'Excellent — Scale Ready'; bg='rgba(163,230,53,0.15)'; col='#A3E635'; }
+    else if(total>=68){ txt=currentLang==='ar'?'مستقر — يحتاج هيكلة':'Stable — Needs Structure'; bg='rgba(251,191,36,0.14)'; col='#fde68a'; }
+    else if(total>=52){ txt=currentLang==='ar'?'هش — تدخل سريع':'Fragile — Quick Fix'; bg='rgba(251,113,133,0.12)'; col='#fecdd3'; }
+    else { txt=currentLang==='ar'?'حرج — إعادة بناء':'Critical — Rebuild'; bg='rgba(239,68,68,0.14)'; col='#fca5a5'; }
+    tag.textContent=txt; tag.style.background=bg; tag.style.color=col;
+  }
+};
+
+// 999x LocalStorage — makes every button real & persistent
+const LS = {
+  get(k, d=null){ try{ const v=localStorage.getItem(k); return v? JSON.parse(v): d; }catch{ return d; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} },
+  push(k, v){ const arr = LS.get(k, []); arr.push(v); LS.set(k, arr); return arr; }
+};
+
+// Persist language
+const _origSetLang = setLanguage;
+setLanguage = function(lang){
+  _origSetLang(lang);
+  LS.set('999x_lang', lang);
+};
+
+// Load on start
+try{
+  const savedLang = LS.get('999x_lang', null);
+  if(savedLang && savedLang !== currentLang) setLanguage(savedLang);
+  // restore pulse
+  const savedPulse = LS.get('999x_pulse', null);
+  if(savedPulse){
+    const tBtn = document.querySelector(`.team-opt-btn[data-type="${savedPulse.type}"]`);
+    if(tBtn) tBtn.click();
+    const painSel = document.getElementById('diagPain1');
+    if(painSel && savedPulse.pain) painSel.value = savedPulse.pain;
+    const sz = document.getElementById('teamSizeRange');
+    const szVal = document.getElementById('teamSizeVal');
+    if(sz && savedPulse.teamSize){ sz.value = savedPulse.teamSize; if(szVal) szVal.textContent = (LS.get('999x_lang')==='en' ? `${savedPulse.teamSize} Members` : `${savedPulse.teamSize} فرداً`); }
+  }
+  // restore wizard
+  const wiz = LS.get('999x_wizard', null);
+  if(wiz){
+    const n = document.getElementById('wizName'); if(n && wiz.name) n.value = wiz.name;
+    const ph = document.getElementById('wizPhone'); if(ph && wiz.phone) ph.value = wiz.phone;
+  }
+  // restore CTA leads count badge if exists
+  const leads = LS.get('999x_leads', []);
+  if(leads.length){
+    const badge = document.getElementById('leadsBadge');
+    if(badge) badge.textContent = leads.length;
+  }
+}catch(e){}
+
+// Wrap computePulse to persist
+const _compute = computePulse;
+computePulse = function(){
+  _compute();
+  try{
+    const p = document.getElementById('diagPain1')?.value;
+    const sz = document.getElementById('teamSizeRange')?.value;
+    const health = document.getElementById('diagHealthScore')?.textContent;
+    const brief = document.getElementById('diagBriefText')?.textContent;
+    const hr = document.getElementById('mHr')?.textContent;
+    LS.set('999x_pulse', { type: currentType, pain: p, teamSize: sz, health, brief, hr, ts: Date.now() });
+    LS.set('999x_pulse_metrics', { hr: document.getElementById('mHr')?.textContent, churn: document.getElementById('mChurn')?.textContent, sponsor: document.getElementById('mSponsor')?.textContent, exec: document.getElementById('mExec')?.textContent });
+  }catch{}
+};
+
+// Make CTA real + persist
+(function(){
+  const btn = document.getElementById('ctaSubmitBtn');
+  const input = document.getElementById('ctaEmailInput');
+  const msg = document.getElementById('ctaMsg');
+  if(!btn || !input) return;
+  // restore last email
+  const lastLead = LS.get('999x_last_lead', null);
+  if(lastLead && lastLead.email) input.value = lastLead.email;
+  const origClick = btn.onclick;
+  btn.addEventListener('click', (e)=>{
+    // let original handler run first (it already has one), then add persistence
+    setTimeout(()=>{
+      const email = input.value.trim();
+      if(!email || !email.includes('@')) return;
+      const lead = { email, ts: new Date().toISOString(), source: 'landing_cta', lang: currentLang };
+      LS.push('999x_leads', lead);
+      LS.set('999x_last_lead', lead);
+      // also store in client store
+      const clients = LS.get('999x_clients', []);
+      if(!clients.find(c=>c.email===email)){
+        clients.push({ id: 'CLI-'+Date.now().toString(36).toUpperCase(), email, org: email.split('@')[0], createdAt: lead.ts });
+        LS.set('999x_clients', clients);
+      }
+    }, 50);
+  });
+})();
+
+// Make Wizard real + persist
+(function(){
+  const nameEl = document.getElementById('wizName');
+  const phoneEl = document.getElementById('wizPhone');
+  const submitBtn = document.getElementById('submitWizBtn');
+  if(nameEl) nameEl.addEventListener('input', ()=> LS.set('999x_wizard', { name: nameEl.value, phone: phoneEl?.value||'', cat: currentType, ts: Date.now() }));
+  if(phoneEl) phoneEl.addEventListener('input', ()=> LS.set('999x_wizard', { name: nameEl?.value||'', phone: phoneEl.value, cat: currentType, ts: Date.now() }));
+  // enhance submit to persist client
+  if(submitBtn){
+    submitBtn.addEventListener('click', ()=>{
+      setTimeout(()=>{
+        const wizData = { name: nameEl?.value||'', phone: phoneEl?.value||'', type: currentType, ts: Date.now() };
+        LS.set('999x_wizard', wizData);
+        const clientId = 'CLI-999-'+Math.floor(Math.random()*9000+1000);
+        const client = { id: clientId, name: wizData.name || 'Demo Team', phone: wizData.phone, type: wizData.type, health: document.getElementById('diagHealthScore')?.textContent||'84', createdAt: new Date().toISOString() };
+        LS.set('999x_client', client);
+        LS.push('999x_clients', client);
+        // also save pulse as client pulse
+        const pulse = LS.get('999x_pulse', {});
+        LS.set('999x_client_pulse_'+clientId, pulse);
+      }, 100);
+    });
+  }
+})();
+
+// Make Bento interactions persist
+(function(){
+  document.querySelectorAll('.dept-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const dept = b.dataset.dept;
+      LS.set('999x_bento_dept', { dept, ts: Date.now() });
+    });
+  });
+  document.querySelectorAll('.emergency-scenario-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      LS.set('999x_bento_scenario', { scenario: b.dataset.scenario, ts: Date.now() });
+    });
+  });
+  const copyBtn = document.getElementById('copySponsorEmailBtn');
+  if(copyBtn){
+    const orig = copyBtn.onclick;
+    copyBtn.addEventListener('click', ()=>{
+      const count = (LS.get('999x_copy_count', 0) || 0) + 1;
+      LS.set('999x_copy_count', count);
+      LS.push('999x_copies', { ts: new Date().toISOString(), count, lang: currentLang });
+    });
+  }
+  // Restore bento state on load
+  const savedDept = LS.get('999x_bento_dept', null);
+  if(savedDept && savedDept.dept){
+    const btn = document.querySelector(`.dept-btn[data-dept="${savedDept.dept}"]`);
+    if(btn) setTimeout(()=> btn.click(), 300);
+  }
+  const savedSc = LS.get('999x_bento_scenario', null);
+  if(savedSc && savedSc.scenario){
+    const btn = document.querySelector(`.emergency-scenario-btn[data-scenario="${savedSc.scenario}"]`);
+    if(btn) setTimeout(()=> btn.click(), 500);
+  }
+})();
+
+// Make Download PDF real — creates a real file download and persists
+(function(){
+  const dlBtn = document.getElementById('downloadSampleReportBtn');
+  if(!dlBtn) return;
+  dlBtn.addEventListener('click', (e)=>{
+    // prevent double toast, do real download
+    try{
+      const pulse = LS.get('999x_pulse', {});
+      const health = document.getElementById('diagHealthScore')?.textContent || '84';
+      const brief = document.getElementById('diagBriefText')?.textContent || '';
+      const org = LS.get('999x_wizard', {}).name || 'Demo Team';
+      const lang = currentLang;
+      const content = lang==='ar'
+        ? `تقرير 999x — نبض المنظمة\nالمنظمة: ${org}\nالصحة: ${health}/100\nالتشخيص: ${brief}\nالتاريخ: ${new Date().toLocaleString('ar-EG')}\nالنوع: ${currentType}\n\nهذا تقرير تجريبي مولد محلياً — في الإنتاج يحتوي على RACI + Pitch Deck + QR مشفر.`
+        : `999x Report — Org Pulse\nOrg: ${org}\nHealth: ${health}/100\nBrief: ${brief}\nDate: ${new Date().toLocaleString('en-US')}\nType: ${currentType}\n\nDemo report — production contains RACI + Pitch Deck + QR.`;
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `999x-report-${Date.now()}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(()=> URL.revokeObjectURL(url), 1000);
+      LS.push('999x_downloads', { ts: new Date().toISOString(), health, org, lang });
+      LS.set('999x_last_download', { health, brief: brief.slice(0,60), ts: Date.now() });
+    }catch{}
+  });
+})();
+
+// Make nav links that are "#" real — smooth scroll + persist
+document.querySelectorAll('a[href="#"]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    const href = a.getAttribute('href');
+    if(href === '#'){
+      const parentText = a.textContent?.trim()||'';
+      // treat as placeholder link — save click
+      LS.push('999x_nav_clicks', { text: parentText, ts: Date.now() });
+    }
+  });
+});
+
+// Restore team type buttons from LS (already handled) and also save on change
+document.querySelectorAll('.team-opt-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    // computePulse already saves, but also save explicitly
+    LS.set('999x_pulse_type', btn.dataset.type);
+  });
+});
+document.getElementById('teamSizeRange')?.addEventListener('input', (e)=>{
+  LS.set('999x_team_size', e.target.value);
+});
+
+// Expose LS for debugging
+window.LS = LS;
+console.log('[999x] LocalStorage ready — keys:', Object.keys(localStorage).filter(k=>k.startsWith('999x_')));
+
+// Initial compute on load
+computePulse();
+</script>
+
+</body>
+</html>

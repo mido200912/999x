@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:7
+    container_name: 999x-mongo
+    restart: unless-stopped
+    ports: ["27017:27017"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-999x}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-999x_legendary_2026}
+      MONGO_INITDB_DATABASE: 999x
+    volumes: ["mongo_data:/data/db"]
+    healthcheck: { test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"], interval: 10s, retries: 5 }
+
+  redis:
+    image: redis:7-alpine
+    container_name: 999x-redis
+    restart: unless-stopped
+    ports: ["6379:6379"]
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASS:-999x_redis_2026}
+    volumes: ["redis_data:/data"]
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 10s, retries: 5 }
+
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    container_name: 999x-api
+    restart: unless-stopped
+    ports: ["3001:3001"]
+    depends_on: { mongodb: { condition: service_healthy }, redis: { condition: service_healthy } }
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      MONGODB_URI: mongodb://${MONGO_USER:-999x}:${MONGO_PASS:-999x_legendary_2026}@mongodb:27017/999x?authSource=admin
+      REDIS_URL: redis://:${REDIS_PASS:-999x_redis_2026}@redis:6379
+      JWT_SECRET: ${JWT_SECRET:-999x_jwt_legendary_secret_2026_change_me}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      WHATSAPP_TOKEN: ${WHATSAPP_TOKEN}
+    volumes: ["./apps/api:/app/apps/api", "./packages:/app/packages"]
+
+  web:
+    build: { context: ., dockerfile: apps/web/Dockerfile }
+    container_name: 999x-web
+    restart: unless-stopped
+    ports: ["4321:4321"]
+    depends_on: [api]
+    environment:
+      PUBLIC_API_URL: http://api:3001
+    volumes: ["./apps/web:/app/apps/web", "./packages:/app/packages"]
+
+volumes:
+  mongo_data:
+  redis_data:

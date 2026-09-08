@@ -1,0 +1,14 @@
+---
+interface Props { variant?: "lime" | "glass"; href?: string; type?: "button" | "submit"; class?: string; }
+const { variant="lime", href, type="button", class: klass="" } = Astro.props;
+const base = variant === "lime" ? "btn-lime" : "btn-glass";
+---
+{href ? (
+  <a href={href} class:list={[base, "inline-flex items-center justify-center px-5 h-11 text-[13.5px] font-bold", klass]}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class:list={[base, "inline-flex items-center justify-center px-5 h-11 text-[13.5px] font-bold", klass]}>
+    <slot />
+  </button>
+)}

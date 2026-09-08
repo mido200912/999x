@@ -1,0 +1,19 @@
+---
+// Hero3D — interactive 999x geometric shield (Three.js placeholder, currently CSS 3D tilt)
+// Preserves the legendary hero from /index.html but as reusable island
+---
+<div id="hero3d" class="glass-panel rounded-3xl p-7 sm:p-9 relative overflow-hidden" style="transform-style:preserve-3d">
+  <slot />
+</div>
+<script>
+  const el = document.getElementById('hero3d');
+  if (el) {
+    el.addEventListener('mousemove', (e: MouseEvent) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
+    });
+    el.addEventListener('mouseleave', () => el.style.transform = 'perspective(900px) rotateY(0) rotateX(0)');
+  }
+</script>

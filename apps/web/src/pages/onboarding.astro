@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import IntakeWizard from "../components/wizard/IntakeWizard.tsx";
+---
+<BaseLayout title="Onboarding — 999x Intake Wizard">
+  <div class="max-w-[900px] mx-auto px-5 sm:px-8 py-10">
+    <div class="mb-6">
+      <a href="/" class="text-[12px] font-mono text-white/40 hover:text-lime">← العودة للاندينج</a>
+      <h1 class="font-display font-black text-[28px] sm:text-[36px] text-pistachio mt-2">معالج التقديم الذكي المتشعب</h1>
+      <p class="text-[13.5px] text-white/60 mt-1">Adaptive Dynamic Intake Wizard — cockpit layout مع شريط تقدم ليموني وتشعب حسب الفئة.</p>
+    </div>
+    <IntakeWizard client:load />
+    <div class="mt-6 rounded-2xl p-4 bg-canvas border border-white/10 text-[11px] font-mono text-white/40">
+      Smart Branching: Startup → توظيف و PR للتمويل | Volunteer → شغف وهيكل لامركزي | Event → لوجستيات ومتحدثين
+    </div>
+  </div>
+</BaseLayout>

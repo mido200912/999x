@@ -1,0 +1,57 @@
+---
+import GlassCard from "../ui/GlassCard.astro";
+---
+<div id="bentoGrid" class="grid grid-cols-12 gap-6">
+  <GlassCard class="col-span-12 lg:col-span-7 bento-card" hover>
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="font-display font-bold text-[19px] text-pistachio">محرك إعادة هيكلة الـ HR</h3>
+      <span class="font-mono text-[11px] text-lime px-2.5 py-1 rounded-lg bg-lime/10 border border-lime/25">RACI Hierarchy</span>
+    </div>
+    <p class="text-[14px] text-pistachio/75 mb-6">هيكل شجري بمسؤوليات واضحة ومسار ترقية يقلل التسرب 65%.</p>
+    <div class="rounded-2xl p-4 bg-canvas border border-white/10">
+      <div class="flex justify-center"><span class="px-4 py-2 rounded-full bg-lime text-canvas font-bold text-[12px]">CEO</span></div>
+      <div class="grid grid-cols-4 gap-2 mt-4">
+        <div class="p-3 rounded-xl bg-elevated border border-lime/30 text-center"><div class="font-bold text-pistachio text-[12px]">HR</div><div class="font-mono text-[10px] text-lime">4 Members</div></div>
+        <div class="p-3 rounded-xl bg-canvas border border-white/10 text-center"><div class="font-bold text-pistachio text-[12px]">OPS</div><div class="font-mono text-[10px] text-white/40">5</div></div>
+        <div class="p-3 rounded-xl bg-canvas border border-white/10 text-center"><div class="font-bold text-pistachio text-[12px]">PR</div><div class="font-mono text-[10px] text-white/40">6</div></div>
+        <div class="p-3 rounded-xl bg-canvas border border-white/10 text-center"><div class="font-bold text-pistachio text-[12px]">Sponsors</div><div class="font-mono text-[10px] text-white/40">3</div></div>
+      </div>
+    </div>
+  </GlassCard>
+
+  <GlassCard class="col-span-12 lg:col-span-5 bento-card" hover>
+    <h3 class="font-display font-bold text-[19px] text-pistachio">استوديو عروض الرعاة</h3>
+    <p class="text-[14px] text-pistachio/75 mb-4">توليد حزم الرعاية + مطابقة القطاعات.</p>
+    <div class="space-y-2">
+      <div class="p-3 rounded-xl bg-canvas border border-lime/30 flex justify-between"><span class="font-bold text-lime text-[13px]">Gold — 55K EGP</span><span class="text-[11px] text-white/50">جناح + كلمة</span></div>
+      <div class="p-3 rounded-xl bg-surface border border-white/10 flex justify-between"><span class="font-bold text-pistachio text-[13px]">Silver — 30K</span><span class="text-[11px] text-white/40">لوجو + بوستات</span></div>
+    </div>
+  </GlassCard>
+
+  <GlassCard class="col-span-12 lg:col-span-5 bento-card" hover>
+    <h3 class="font-display font-bold text-[19px] text-pistachio">خطط العمل المتكيفة</h3>
+    <div class="mt-4 space-y-3">
+      <div><div class="flex justify-between text-[12px]"><span class="text-pistachio">هيكلة HR</span><span class="font-mono text-lime">3/5</span></div><div class="h-1.5 rounded-full bg-white/10 mt-1"><div class="h-full bg-lime" style="width:60%"></div></div></div>
+      <div><div class="flex justify-between text-[12px]"><span class="text-pistachio">حملة الرعاة</span><span class="font-mono text-white/40">1/4</span></div><div class="h-1.5 rounded-full bg-white/10 mt-1"><div class="h-full bg-violet" style="width:25%"></div></div></div>
+    </div>
+  </GlassCard>
+
+  <GlassCard class="col-span-12 lg:col-span-7 bento-card" hover>
+    <h3 class="font-display font-bold text-[19px] text-pistachio">نظام التذاكر والتدخل السريع</h3>
+    <p class="text-[13px] text-white/50">تذكرة حرجة عبر واتساب → خطة بديلة في 60s.</p>
+    <div class="grid sm:grid-cols-3 gap-2 mt-4">
+      <div class="rounded-xl p-3 bg-amber-500/10 border border-amber-500/20"><div class="font-mono text-[10px] text-amber-300">CRITICAL</div><div class="font-bold text-pistachio text-[12px]">متحدث اعتذر</div><div class="text-[11px] text-lime">AI جاهز →</div></div>
+      <div class="rounded-xl p-3 bg-white/5 border border-white/10"><div class="font-mono text-[10px] text-white/30">URGENT</div><div class="font-bold text-pistachio text-[12px]">تأخر بنرات</div></div>
+      <div class="rounded-xl p-3 bg-white/5 border border-white/10"><div class="font-mono text-[10px] text-white/30">NORMAL</div><div class="font-bold text-pistachio text-[12px]">تعديل PR</div><div class="text-[11px] text-emerald-400">تم الحل ✓</div></div>
+    </div>
+  </GlassCard>
+</div>
+<script>
+  document.querySelectorAll('.bento-card').forEach(c=>{
+    c.addEventListener('mousemove', (e:MouseEvent)=>{
+      const r=(c as HTMLElement).getBoundingClientRect();
+      (c as HTMLElement).style.background=`radial-gradient(600px circle at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(163,230,53,0.06), transparent 40%), linear-gradient(145deg, rgba(48,10,72,0.65), rgba(34,6,51,0.85))`;
+    });
+    c.addEventListener('mouseleave', ()=> (c as HTMLElement).style.background='');
+  });
+</script>
