@@ -1,1 +1,0 @@
-const t=document.getElementById("scrollProgress");window.addEventListener("scroll",()=>{const e=document.documentElement.scrollHeight-window.innerHeight,n=e>0?window.scrollY/e*100:0;t&&(t.style.width=n+"%")},{passive:!0});
