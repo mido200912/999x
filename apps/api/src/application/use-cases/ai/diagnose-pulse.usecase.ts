@@ -1,4 +1,4 @@
-﻿import { ok, type Result } from '../../core/contracts/index.js';
+﻿import { ok, type Result } from '../../../core/contracts/index.js';
 import { HealthScore } from '../../../core/value-objects/health-score.vo.js';
 
 export type PulseInput = { category:'STARTUP'|'VOLUNTEER_TEAM'|'EVENT'; pains:string[]; teamSize:number };

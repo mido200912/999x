@@ -1,4 +1,4 @@
-﻿import { ok, err, type Result, AppError } from '../../core/contracts/index.js';
+﻿import { ok, err, type Result, AppError } from '../../../core/contracts/index.js';
 import { TaskModel } from '../../../infrastructure/database/schemas.js';
 
 export async function assignTask(input:{ clientId:string; title:string; assignedOpsMember:string; priority?:string; deadline: string }): Promise<Result<{id:string}>>{
@@ -22,4 +22,5 @@ export async function moveTask(id:string, columnStatus:string): Promise<Result<a
   if(!task) return err(AppError.notFound('Task'));
   return ok(task);
 }
+
 

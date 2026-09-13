@@ -16,22 +16,31 @@ const UserSchema = new Schema<IUserDocument>({
 }, { timestamps: true });
 
 export interface IClientDocument extends Document {
-  organizationName: string; category: 'STARTUP' | 'VOLUNTEER_TEAM' | 'EVENT';
+  organizationName: string; subtitle: string; description?: string;
   brandColor?: string; logoUrl?: string;
-  primaryContact: { name: string; email: string; phone: string; whatsappPhone?: string; };
+  companyType?: string; companyTypeCustom?: string;
+  eventDetails?: { expectedDate?: string; budget?: string; attendeesCount?: string; };
+  customDetails?: Array<{ key: string; value: string; }>;
+  primaryContact: { name: string; email?: string; phone: string; whatsappPhone?: string; };
   operationalStage: 'DIAGNOSIS' | 'RESTRUCTURING' | 'EXECUTION' | 'COMPLETED';
+  registrationStatus: 'PENDING' | 'ACCEPTED' | 'REJECTED';
   healthScore: number; assignedOpsLead: Types.ObjectId;
   tokenBudget: { monthlyLimit: number; tokensUsed: number; }; createdAt: Date; updatedAt: Date;
 }
 const ClientSchema = new Schema<IClientDocument>({
   organizationName: { type: String, required: true, trim: true, index: true },
-  category: { type: String, enum: ['STARTUP', 'VOLUNTEER_TEAM', 'EVENT'], required: true },
+  subtitle: { type: String, required: true, trim: true },
+  description: { type: String, trim: true },
   brandColor: { type: String, default: '#A3E635' }, logoUrl: String,
+  companyType: String, companyTypeCustom: String,
+  eventDetails: { expectedDate: String, budget: String, attendeesCount: String },
+  customDetails: [{ key: String, value: String }],
   primaryContact: {
-    name: { type: String, required: true }, email: { type: String, required: true },
+    name: { type: String, required: true }, email: { type: String },
     phone: { type: String, required: true }, whatsappPhone: String,
   },
   operationalStage: { type: String, enum: ['DIAGNOSIS','RESTRUCTURING','EXECUTION','COMPLETED'], default: 'DIAGNOSIS', index: true },
+  registrationStatus: { type: String, enum: ['PENDING','ACCEPTED','REJECTED'], default: 'ACCEPTED', index: true },
   healthScore: { type: Number, default: 70, min: 0, max: 100 },
   assignedOpsLead: { type: Schema.Types.ObjectId, ref: 'User', required: true, index: true },
   tokenBudget: { monthlyLimit: { type: Number, default: 200000 }, tokensUsed: { type: Number, default: 0 } },
@@ -118,6 +127,76 @@ const AuditLogSchema = new Schema<IAuditLogDocument>({
   metadata: Schema.Types.Mixed, timestamp: { type: Date, default: Date.now, index: true },
 }, { versionKey: false });
 
+export interface ISponsorLeadDocument extends Document {
+  clientId: Types.ObjectId; name: string; company: string;
+  status: 'INTERESTED' | 'NEGOTIATING' | 'CLOSED_WON' | 'CLOSED_LOST';
+  createdAt: Date; updatedAt: Date;
+}
+const SponsorLeadSchema = new Schema<ISponsorLeadDocument>({
+  clientId: { type: Schema.Types.ObjectId, ref: 'Client', required: true, index: true },
+  name: { type: String, required: true },
+  company: { type: String, required: true },
+  status: { type: String, enum: ['INTERESTED','NEGOTIATING','CLOSED_WON','CLOSED_LOST'], default: 'INTERESTED' },
+}, { timestamps: true });
+
+export interface IAIStudioRunDocument extends Document {
+  clientId: Types.ObjectId; modelEngine: string; prompt: string; response: string;
+  tokensUsed: number; latencyMs: number; createdAt: Date;
+}
+const AIStudioRunSchema = new Schema<IAIStudioRunDocument>({
+  clientId: { type: Schema.Types.ObjectId, ref: 'Client', required: true, index: true },
+  modelEngine: { type: String, required: true },
+  prompt: { type: String, required: true },
+  response: { type: String, required: true },
+  tokensUsed: { type: Number, required: true },
+  latencyMs: { type: Number, required: true },
+}, { timestamps: true });
+
+export interface IProspectLeadDocument extends Document {
+  organizationName: string;
+  category: 'STARTUP' | 'VOLUNTEER_TEAM' | 'EVENT' | 'ENTERPRISE';
+  contactPerson: string;
+  email: string;
+  phone: string;
+  status: 'PENDING' | 'ACCEPTED' | 'REJECTED';
+  pitchAngle?: string;
+  estimatedBudget?: string;
+  notes?: string;
+  convertedClientId?: Types.ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
+}
+const ProspectLeadSchema = new Schema<IProspectLeadDocument>({
+  organizationName: { type: String, required: true, trim: true },
+  category: { type: String, enum: ['STARTUP', 'VOLUNTEER_TEAM', 'EVENT', 'ENTERPRISE'], default: 'STARTUP' },
+  contactPerson: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, default: '' },
+  status: { type: String, enum: ['PENDING', 'ACCEPTED', 'REJECTED'], default: 'PENDING', index: true },
+  pitchAngle: String,
+  estimatedBudget: String,
+  notes: String,
+  convertedClientId: { type: Schema.Types.ObjectId, ref: 'Client' },
+}, { timestamps: true });
+
+export interface IApiKeyDocument extends Document {
+  name: string;
+  keyHash: string;
+  prefix: string;
+  role: 'READ' | 'WRITE' | 'FULL_ADMIN';
+  lastUsedAt?: Date;
+  expiresAt?: Date;
+  createdAt: Date;
+}
+const ApiKeySchema = new Schema<IApiKeyDocument>({
+  name: { type: String, required: true },
+  keyHash: { type: String, required: true },
+  prefix: { type: String, required: true },
+  role: { type: String, enum: ['READ', 'WRITE', 'FULL_ADMIN'], default: 'WRITE' },
+  lastUsedAt: Date,
+  expiresAt: Date,
+}, { timestamps: true });
+
 export const UserModel = model<IUserDocument>('User', UserSchema);
 export const ClientModel = model<IClientDocument>('Client', ClientSchema);
 export const SubmissionModel = model<ISubmissionDocument>('Submission', SubmissionSchema);
@@ -125,3 +204,9 @@ export const AIReportModel = model<IAIReportDocument>('AIReport', AIReportSchema
 export const TaskModel = model<ITaskDocument>('Task', TaskSchema);
 export const TicketModel = model<ITicketDocument>('Ticket', TicketSchema);
 export const AuditLogModel = model<IAuditLogDocument>('AuditLog', AuditLogSchema);
+export const SponsorLeadModel = model<ISponsorLeadDocument>('SponsorLead', SponsorLeadSchema);
+export const AIStudioRunModel = model<IAIStudioRunDocument>('AIStudioRun', AIStudioRunSchema);
+export const ProspectLeadModel = model<IProspectLeadDocument>('ProspectLead', ProspectLeadSchema);
+export const ApiKeyModel = model<IApiKeyDocument>('ApiKey', ApiKeySchema);
+
+

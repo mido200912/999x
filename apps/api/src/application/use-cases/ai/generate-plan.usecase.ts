@@ -1,4 +1,4 @@
-﻿import { ok, err, type Result, AppError } from '../../core/contracts/index.js';
+﻿import { ok, err, type Result, AppError } from '../../../core/contracts/index.js';
 import { AIReportModel, ClientModel } from '../../../infrastructure/database/schemas.js';
 import { generateBrandedPdf } from '../../../infrastructure/pdf/branded-pdf.js';
 import { createHash } from 'node:crypto';
@@ -24,4 +24,5 @@ export async function generatePlan(input:{ clientId:string; reportType:any; mode
   report.pdfExportUrl = pdf.url; await report.save();
   return ok({ id:String(report._id), verificationHash, pdf });
 }
+
 

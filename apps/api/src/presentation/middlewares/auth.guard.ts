@@ -1,7 +1,8 @@
 import type { MiddlewareHandler } from 'hono';
 import jwt from 'jsonwebtoken';
 
-export const authGuard: MiddlewareHandler = async (c, next) => {
+type Vars = { user?: any; tenantFilter?: any };
+export const authGuard: MiddlewareHandler<{ Variables: Vars }> = async (c, next) => {
   const token = c.req.header('authorization')?.replace('Bearer ', '') ?? c.req.header('cookie')?.match(/access_token=([^;]+)/)?.[1];
   if (!token) return c.json({ success: false, error: { code: 'UNAUTHORIZED', message: 'Missing token' } }, 401);
   try {
@@ -13,7 +14,7 @@ export const authGuard: MiddlewareHandler = async (c, next) => {
   }
 };
 
-export const roleGuard = (roles: string[]): MiddlewareHandler => async (c, next) => {
+export const roleGuard = (roles: string[]): MiddlewareHandler<{ Variables: Vars }> => async (c, next) => {
   const user = c.get('user') as any;
   if (!user || !roles.includes(user.role)) return c.json({ success: false, error: { code: 'FORBIDDEN', message: 'Insufficient role' } }, 403);
   await next();

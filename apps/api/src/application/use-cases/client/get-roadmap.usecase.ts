@@ -1,4 +1,4 @@
-﻿import { ok, err, type Result, AppError } from '../../core/contracts/index.js';
+﻿import { ok, err, type Result, AppError } from '../../../core/contracts/index.js';
 import { ClientModel, AIReportModel } from '../../../infrastructure/database/schemas.js';
 
 export async function getRoadmap(clientId:string, tenantFilter?:any): Promise<Result<any>>{
@@ -14,4 +14,5 @@ export async function getRoadmap(clientId:string, tenantFilter?:any): Promise<Re
   ];
   return ok({ client, stations, health: client.healthScore });
 }
+
 

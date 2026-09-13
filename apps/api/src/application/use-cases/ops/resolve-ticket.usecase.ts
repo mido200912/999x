@@ -1,4 +1,4 @@
-﻿import { ok, err, type Result, AppError } from '../../core/contracts/index.js';
+﻿import { ok, err, type Result, AppError } from '../../../core/contracts/index.js';
 import { TicketModel } from '../../../infrastructure/database/schemas.js';
 
 export async function resolveTicket(ticketId:string, resolverId:string, message:string): Promise<Result<any>>{
@@ -23,4 +23,5 @@ export async function createTicket(input:{ clientId:string; subject:string; desc
   });
   return ok({ id:String(ticket._id) });
 }
+
 

@@ -1,4 +1,4 @@
-﻿import { ok, err, type Result, AppError } from '../../core/contracts/index.js';
+﻿import { ok, err, type Result, AppError } from '../../../core/contracts/index.js';
 import { ClientModel } from '../../../infrastructure/database/schemas.js';
 import { HealthScore } from '../../../core/value-objects/health-score.vo.js';
 
@@ -15,4 +15,5 @@ export async function registerClient(input: { organizationName:string; category:
   });
   return ok({ id: String(doc._id) });
 }
+
 
